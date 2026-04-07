@@ -382,22 +382,33 @@ footer {
 
   /* Menu overlay */
   .menu-panel {
-    padding: 24px 24px;
+    padding: 20px 20px;
     height: 65vh;
     flex-direction: column;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   .menu-img { display: none; }
   .menu-nav {
     padding-left: 0;
-    padding-top: 40px;
+    padding-top: 36px;
     align-items: flex-start;
+    width: 100%;
   }
   .menu-link {
-    font-size: clamp(32px, 10vw, 52px);
+    font-size: clamp(28px, 9vw, 48px);
     letter-spacing: -0.5px;
+    white-space: normal;
   }
-  .menu-close-btn { right: 24px; top: 20px; }
-  .menu-footer { left: 24px; right: 24px; bottom: 20px; }
+  .menu-close-btn {
+    position: static;
+    align-self: flex-end;
+    margin-bottom: 0;
+    opacity: 1 !important;
+    order: -1;
+  }
+  .menu-overlay.is-open .menu-close-btn { opacity: 1; }
+  .menu-footer { left: 20px; right: 20px; bottom: 16px; }
 
   /* Footer */
   .footer-grid {
