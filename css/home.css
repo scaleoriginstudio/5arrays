@@ -183,17 +183,6 @@
 .why-col:nth-child(2) { text-align: center; }
 .why-col:nth-child(3) { text-align: right; }
 
-@media (max-width: 768px) {
-  .why-cols {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .why-col:nth-child(1),
-  .why-col:nth-child(2),
-  .why-col:nth-child(3) {
-    text-align: justify;
-  }
-}
 
 /* ── BUILT TO LAST ── */
 .built {
@@ -332,3 +321,57 @@
 .school-form .field::placeholder { color: #aaa; }
 
 .school-form .btn { margin-top: 8px; }
+
+
+/* ════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-content { max-width: 680px; }
+  .highlights { padding: 60px 32px 48px; }
+  .why { padding: 100px 48px; }
+  .why-cols { gap: 48px; }
+  .school-block { grid-template-columns: 50% 50%; }
+  .school-form-area { padding: 40px 32px; }
+}
+
+
+/* ════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤768px)
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero { min-height: 420px; }
+  .hero-content { width: 92%; bottom: 10%; }
+  .hero-content h1 { margin-bottom: 20px; }
+
+  /* About */
+  .about { padding: 64px 24px; }
+
+  /* Highlights */
+  .highlights { padding: 48px 20px 40px; }
+  .h-grid-3 { grid-template-columns: 1fr; gap: 32px; }
+  .h-grid-2 { grid-template-columns: 1fr; gap: 24px; }
+  .h-grid-2 .h-card img { aspect-ratio: 16 / 9; }
+
+  /* Why */
+  .why { padding: 80px 24px 100px; }
+  .why-subtitle { font-size: 14px; margin-bottom: 48px; }
+  .why-cols { grid-template-columns: 1fr; gap: 48px; }
+  .why-col:nth-child(1),
+  .why-col:nth-child(2),
+  .why-col:nth-child(3) { text-align: justify; }
+  .why-col h3 { font-size: 18px; }
+  .why-col p  { font-size: 14px; }
+
+  /* Built */
+  .built { padding: 32px 24px 60px; min-height: auto; }
+  .built-product img { height: 280px; }
+
+  /* School block — stack vertically */
+  .school-block { grid-template-columns: 1fr; height: auto; max-height: none; }
+  .school-img { height: 300px; }
+  .school-form-area { padding: 40px 24px; }
+  .school-form-area h2 { font-size: 18px; }
+  .marquee-half span { font-size: 32px; }
+}
