@@ -1,0 +1,354 @@
+/* ============================================================
+   GLOBAL.CSS — shared across all pages
+   Variables · Reset · Typography · Nav · Menu Overlay · Footer · Buttons
+   ============================================================ */
+
+/* ── Variables ── */
+:root {
+  --blue:       #1B1464;
+  --green:      #006655;
+  --beige:      #E4D5A7;
+  --text:       #555;
+  --nav-height: 74px;
+  --ease-menu:  cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+
+a { text-decoration: none; }
+
+p {
+  color: var(--blue);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-green       { background: var(--green); color: #fff; }
+.btn-green:hover { background: #00554a; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+.btn-outline:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* ── Section label ── */
+.section-label {
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 40px;
+}
+
+
+/* ════════════════════════════════════════
+   NAV
+   ════════════════════════════════════════ */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  background: #fff;
+  border-bottom: 2px solid var(--green);
+  position: relative;
+  z-index: 100;
+  height: var(--nav-height);
+}
+
+/* Logo — left */
+.nav-logo img { height: 44px; }
+
+/* Hamburger — absolute centre */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  background: var(--blue);
+  transition: transform 0.4s var(--ease-menu), opacity 0.25s ease;
+}
+
+/* Hamburger → X when menu is open */
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(4.25px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  transform: translateY(-4.25px) rotate(-45deg);
+}
+
+/* Right placeholder keeps logo centred via space-between */
+.nav-right {
+  width: 44px; /* matches logo height so flex balances */
+}
+
+
+/* ════════════════════════════════════════
+   MENU OVERLAY
+   ════════════════════════════════════════ */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.menu-overlay.is-open {
+  pointer-events: all;
+  visibility: visible;
+}
+
+/* ── White panel (top ~58 vh) ── */
+.menu-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 58vh;
+  min-height: 380px;
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  padding: 32px 60px;
+  gap: 0;
+  /* Slide in from top */
+  transform: translateY(-101%);
+  transition: transform 0.75s var(--ease-menu);
+  overflow: hidden;
+}
+
+.menu-overlay.is-open .menu-panel {
+  transform: translateY(0);
+}
+
+/* Delay slide-out slightly so links fade first */
+.menu-overlay.is-closing .menu-panel {
+  transition-delay: 0.18s;
+}
+
+/* ── Left: portrait image ── */
+.menu-img {
+  flex: 0 0 auto;
+  width: 150px;
+  margin-top: 8px;
+}
+
+.menu-img img {
+  width: 150px;
+  height: 210px;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.55s ease 0.38s, transform 0.55s var(--ease-menu) 0.38s;
+}
+
+.menu-overlay.is-open .menu-img img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.menu-overlay.is-closing .menu-img img {
+  opacity: 0;
+  transform: scale(0.94);
+  transition-delay: 0s;
+}
+
+/* ── Right: nav links ── */
+.menu-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 80px;
+  padding-top: 6px;
+}
+
+.menu-link {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(40px, 5vw, 80px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  color: #c8c8c8;
+  line-height: 1.1;
+  /* Animate in: slide up + fade */
+  opacity: 0;
+  transform: translateY(55px);
+  transition:
+    transform 0.65s var(--ease-menu),
+    opacity   0.65s ease,
+    color     0.22s ease;
+}
+
+/* Staggered entrance */
+.menu-overlay.is-open .menu-link:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.10s; }
+.menu-overlay.is-open .menu-link:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.17s; }
+.menu-overlay.is-open .menu-link:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
+.menu-overlay.is-open .menu-link:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.31s; }
+
+/* Staggered exit */
+.menu-overlay.is-closing .menu-link { opacity: 0; transform: translateY(20px); transition-delay: 0s !important; }
+
+/* Hover: hovered = brand blue, siblings = dim */
+.menu-nav:hover .menu-link               { color: #d4d4d4; }
+.menu-nav       .menu-link:hover         { color: var(--blue); }
+
+/* ── Close button ── */
+.menu-close-btn {
+  position: absolute;
+  top: 32px;
+  right: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  opacity: 0;
+  transition: opacity 0.3s ease 0.45s, color 0.2s ease;
+}
+
+.menu-close-btn:hover          { color: var(--green); }
+.menu-overlay.is-open .menu-close-btn  { opacity: 1; }
+.menu-overlay.is-closing .menu-close-btn { opacity: 0; transition-delay: 0s; }
+
+/* ── Footer strip (floats at viewport bottom, page shows through) ── */
+.menu-footer {
+  position: absolute;
+  bottom: 28px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.5s;
+}
+
+.menu-overlay.is-open    .menu-footer { opacity: 1; }
+.menu-overlay.is-closing .menu-footer { opacity: 0; transition-delay: 0s; }
+
+.menu-footer-logo img {
+  height: 28px;
+}
+
+.menu-footer-copy,
+.menu-footer-social {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.menu-footer-social:hover { color: #fff; }
+
+
+/* ════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════ */
+footer {
+  background: var(--beige);
+  padding: 56px 60px 40px;
+  color: var(--blue);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.footer-logo img {
+  height: 44px;
+}
+
+.footer-col-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.footer-links { list-style: none; }
+
+.footer-links li { margin-bottom: 8px; }
+
+.footer-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--green);
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover { opacity: 0.75; }
+
+.footer-contact p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--blue) !important;
+  margin-bottom: 7px;
+}
+
+.footer-socials { margin-top: 26px; }

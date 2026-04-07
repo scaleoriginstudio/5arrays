@@ -1,0 +1,334 @@
+/* ============================================================
+   HOME.CSS — styles specific to index.html (home page)
+   Hero · About · Highlights · Why · Built · School · Marquee
+   ============================================================ */
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: calc(100vh - var(--nav-height));
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  max-width: 860px;
+}
+
+.hero-content h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(38px, 3.8vw, 62px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 30px;
+}
+
+/* ── ABOUT ── */
+.about {
+  padding: 110px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.about p {
+  max-width: 600px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+
+/* ── HIGHLIGHTS ── */
+.highlights {
+  padding: 80px 60px 60px;
+}
+
+/* 3-column square grid */
+.h-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* 2-column landscape grid */
+.h-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.h-card { text-align: center; }
+
+.h-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.h-grid-3 .h-card img { aspect-ratio: 3 / 4; }
+.h-grid-2 .h-card img { aspect-ratio: 16 / 8; }
+
+.h-card-label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 2px;
+  margin-top: 14px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.h-card-label:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.view-all { text-align: center; }
+
+.view-all a {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  color: var(--green);
+  border: 1.5px solid var(--green);
+  transition: background 0.2s, color 0.2s;
+}
+
+.view-all a:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* ── WHY 5 ARRAYS ── */
+.why {
+  background: var(--beige);
+  padding: 120px 80px;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.why-divider-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  z-index: 20;
+}
+
+.why-subtitle {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: var(--blue);
+  margin-bottom: 80px;
+}
+
+.why-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-col h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.why-col p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--blue);
+}
+
+/* Column text alignment */
+.why-col:nth-child(1) { text-align: left; }
+.why-col:nth-child(2) { text-align: center; }
+.why-col:nth-child(3) { text-align: right; }
+
+@media (max-width: 768px) {
+  .why-cols {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .why-col:nth-child(1),
+  .why-col:nth-child(2),
+  .why-col:nth-child(3) {
+    text-align: justify;
+  }
+}
+
+/* ── BUILT TO LAST ── */
+.built {
+  background: #fff;
+  padding: 32px 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.built-product {
+  display: flex;
+  justify-content: center;
+  margin-top: -24px;
+}
+
+.built-product img {
+  height: 420px;
+  width: auto;
+  object-fit: contain;
+}
+
+.built-text {
+  text-align: center;
+}
+
+.built-text h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 72px);
+  color: var(--blue);
+  opacity: 0.35;
+  line-height: 1;
+}
+
+/* ── SCHOOL + MARQUEE — two-column ── */
+.school-block {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  height: 600px;
+  max-height: 600px;
+}
+
+/* Left: tall photo */
+.school-img {
+  overflow: hidden;
+}
+
+.school-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Right: marquee + form stacked */
+.school-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Marquee band */
+.marquee-band {
+  overflow: hidden;
+  padding: 26px 0;
+  background: var(--beige);
+  flex-shrink: 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 16s linear infinite;
+}
+
+.marquee-half {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee-half span {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 50px;
+  color: var(--blue);
+  opacity: 0.17;
+  padding: 0 14px;
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Form area */
+.school-form-area {
+  flex: 1;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.school-form-area h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  color: var(--blue);
+  margin-bottom: 28px;
+  line-height: 1.35;
+}
+
+.school-form .field {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #bbb;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #333;
+  background: transparent;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.school-form .field::placeholder { color: #aaa; }
+
+.school-form .btn { margin-top: 8px; }
