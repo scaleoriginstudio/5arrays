@@ -369,7 +369,7 @@
   .built-product img { height: 280px; }
 
   /* School block — stack vertically */
-  .school-block { grid-template-columns: 1fr; height: auto; max-height: none; }
+  .school-block { grid-template-columns: minmax(0, 1fr); height: auto; max-height: none; overflow: hidden; }
   .school-img { height: 300px; }
   .school-form-area { padding: 40px 24px; }
   .school-form-area h2 { font-size: 18px; }
