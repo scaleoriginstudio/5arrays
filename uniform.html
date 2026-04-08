@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Jumper – 5 Arrays Uniforms</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="img/logo.png" alt="5 Arrays – Affordable Luxury">
+    </div>
+    <div class="nav-center">
+      <button class="nav-hamburger" id="menuOpen" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-right"></div>
+  </nav>
+
+  <!-- ── MENU OVERLAY ── -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="menu-panel">
+      <div class="menu-img">
+        <img src="img/homeseven.png" alt="5 Arrays students in uniform">
+      </div>
+      <nav class="menu-nav" aria-label="Main menu">
+        <a href="index.html"   class="menu-link">Home</a>
+        <a href="about.html"   class="menu-link">About Us</a>
+        <a href="contact.html" class="menu-link">Contact Us</a>
+        <a href="shop.html"    class="menu-link active-link">Shop</a>
+      </nav>
+      <button class="menu-close-btn" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+    <div class="menu-footer">
+      <div class="menu-footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+      <span class="menu-footer-copy">© 2025 5 Arrays. Affordable Luxury.</span>
+      <a href="#" class="menu-footer-social">Instagram</a>
+    </div>
+  </div>
+
+  <!-- ── PRODUCT PAGE ── -->
+  <main class="product-page">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="shop.html">Shop by Category</a>
+      <span>/</span>
+      <span>Uniforms</span>
+    </nav>
+
+    <div class="product-layout">
+
+      <!-- ── LEFT: IMAGE GALLERY ── -->
+      <div class="product-gallery">
+
+        <div class="gallery-main">
+          <img
+            id="mainImage"
+            src="https://images.pexels.com/photos/8617742/pexels-photo-8617742.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="5Arrays School Jumper – front view"
+            onerror="this.src='img/homeseven.png'">
+        </div>
+
+        <div class="gallery-thumbs">
+          <img class="thumb active"
+            src="https://images.pexels.com/photos/8617742/pexels-photo-8617742.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Front view"
+            onerror="this.src='img/homeseven.png'">
+          <img class="thumb"
+            src="img/homefour.png"
+            alt="Detail view">
+          <img class="thumb"
+            src="img/homeseven.png"
+            alt="Group view">
+        </div>
+
+      </div>
+
+      <!-- ── RIGHT: PRODUCT DETAILS ── -->
+      <div class="product-details">
+
+        <h1 class="prod-title">5Arrays School Jumper &mdash; Classic Cotton Crew (CBV) (3–16+ Years)</h1>
+
+        <p class="prod-price">£16.50 &ndash; £25.50</p>
+
+        <!-- Colour swatches -->
+        <div class="prod-colours">
+          <p class="colour-label">Available in colours</p>
+          <div class="colour-swatches">
+            <button class="swatch active" style="--swatch-color:#1a1a1a" data-name="Black" aria-label="Select Black">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Black</span>
+            </button>
+            <button class="swatch" style="--swatch-color:#1B1464" data-name="Navy" aria-label="Select Navy">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Navy</span>
+            </button>
+            <button class="swatch" style="--swatch-color:#9b9b9b" data-name="Marl Gray" aria-label="Select Marl Gray">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Marl<br>Gray</span>
+            </button>
+            <button class="swatch" style="--swatch-color:#2d6a4f" data-name="Bottle Green" aria-label="Select Bottle Green">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Bottle<br>Green</span>
+            </button>
+            <button class="swatch" style="--swatch-color:#4169E1" data-name="Royal Blue" aria-label="Select Royal Blue">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Royal<br>Blue</span>
+            </button>
+            <button class="swatch" style="--swatch-color:#7B2D8B" data-name="Purple" aria-label="Select Purple">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Purple</span>
+            </button>
+            <button class="swatch" style="--swatch-color:#7B2232" data-name="Maroon" aria-label="Select Maroon">
+              <span class="swatch-dot"></span>
+              <span class="swatch-name">Maroon</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sections -->
+        <div class="prod-section">
+          <h3>Product Description</h3>
+          <p>Built for every school day. The 5Arrays School Jumper is made from 100% responsibly sourced cotton, soft against the skin, warm through winter, and tough enough to keep up with the chaos of a school day. Knitted with a fine finish so it looks as good on the last day of term as it did on the first.</p>
+        </div>
+
+        <div class="prod-section">
+          <h3>Size and Fit</h3>
+          <p>Unisex regular fit.<br>
+          Available from Junior Age 3-4 through to Adult 2XL, sized to suit the whole school from first year to final year.</p>
+        </div>
+
+        <div class="prod-section">
+          <h3>Features</h3>
+          <ul>
+            <li>Stay Smart Technology: elastane-reinforced neck, hem, and cuffs hold their shape wash after wash, so it always looks put-together.</li>
+            <li>Semi-fashioned raglan sleeves for ease of movement and long-term durability.</li>
+            <li>Fine knit construction with a low-pilling yarn for a smooth, smart finish that doesn't bobble over time.</li>
+          </ul>
+        </div>
+
+        <div class="prod-section">
+          <h3>Material and Care</h3>
+          <p>100% responsibly sourced cotton.<br>
+          Machine washable, low tumble dry. No fuss.<br>
+          Worn on its own or under a school blazer, it works either way.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="prod-cta">
+          <a href="contact.html" class="btn btn-green">Order Now</a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="shop.html">Catalogue</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Returns and Refunds</a></li>
+          <li><a href="#">Help Centre</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact us</p>
+        <div class="footer-contact">
+          <p>Clayhall</p>
+          <p>+91 98182 24293</p>
+          <p>hello@hanabiradesigns.in</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-col-title">Socials</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Thumbnail switcher
+    const mainImg = document.getElementById('mainImage');
+    const thumbs  = document.querySelectorAll('.thumb');
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+          mainImg.src = thumb.src.replace('w=400', 'w=800');
+          mainImg.style.opacity = '1';
+        }, 150);
+      });
+    });
+
+    // Colour swatch selector
+    const swatches = document.querySelectorAll('.swatch');
+    swatches.forEach(sw => {
+      sw.addEventListener('click', () => {
+        swatches.forEach(s => s.classList.remove('active'));
+        sw.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
