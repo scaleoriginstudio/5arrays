@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop – 5 Arrays</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="img/logo.png" alt="5 Arrays – Affordable Luxury">
+    </div>
+    <div class="nav-center">
+      <button class="nav-hamburger" id="menuOpen" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-right"></div>
+  </nav>
+
+  <!-- ── MENU OVERLAY ── -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="menu-panel">
+      <div class="menu-img">
+        <img src="img/homeseven.png" alt="5 Arrays students in uniform">
+      </div>
+      <nav class="menu-nav" aria-label="Main menu">
+        <a href="index.html"   class="menu-link">Home</a>
+        <a href="about.html"   class="menu-link">About Us</a>
+        <a href="contact.html" class="menu-link">Contact Us</a>
+        <a href="shop.html"    class="menu-link active-link">Shop</a>
+      </nav>
+      <button class="menu-close-btn" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+    <div class="menu-footer">
+      <div class="menu-footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+      <span class="menu-footer-copy">© 2025 5 Arrays. Affordable Luxury.</span>
+      <a href="#" class="menu-footer-social">Instagram</a>
+    </div>
+  </div>
+
+  <!-- ── CATEGORY BANNER ── -->
+  <section class="cat-banner" aria-label="Shop by product type">
+
+    <div class="cat-item">
+      <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800"
+           alt="Bags">
+      <span class="cat-label">[ Bags ]</span>
+    </div>
+
+    <div class="cat-item">
+      <img src="https://images.pexels.com/photos/8617742/pexels-photo-8617742.jpeg?auto=compress&cs=tinysrgb&w=800"
+           alt="Uniforms"
+           onerror="this.src='img/homeseven.png'">
+      <span class="cat-label">[ Uniforms ]</span>
+    </div>
+
+    <div class="cat-item">
+      <img src="https://images.pexels.com/photos/3621741/pexels-photo-3621741.jpeg?auto=compress&cs=tinysrgb&w=800"
+           alt="Sportswear"
+           onerror="this.src='img/homefive.png'">
+      <span class="cat-label">[ Sportswear ]</span>
+    </div>
+
+    <div class="cat-item">
+      <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800"
+           alt="Accessories"
+           onerror="this.src='img/homefour.png'">
+      <span class="cat-label">[ Accessories ]</span>
+    </div>
+
+  </section>
+
+  <!-- ── SHOP BY CATEGORY ── -->
+  <section class="shop-section">
+
+    <div class="shop-header">
+      <h1 class="shop-title">Shop by Category</h1>
+
+      <div class="grid-toggle" role="group" aria-label="Choose grid layout">
+        <button class="grid-btn active" data-cols="4" aria-label="4 column grid" title="4 columns">
+          <span></span><span></span><span></span><span></span>
+        </button>
+        <button class="grid-btn" data-cols="3" aria-label="3 column grid" title="3 columns">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="grid-btn" data-cols="2" aria-label="2 column grid" title="2 columns">
+          <span></span><span></span>
+        </button>
+        <button class="grid-btn" data-cols="1" aria-label="List view" title="List view">
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-grid cols-4" id="productGrid">
+
+      <!-- Bags -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.pexels.com/photos/28503359/pexels-photo-28503359.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="School Backpack">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Bags ]</p>
+          <h2 class="prod-name">School Backpack</h2>
+          <p class="prod-desc">Durable everyday pack with padded straps and embroidery options.</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Drawstring Bag">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Bags ]</p>
+          <h2 class="prod-name">Drawstring Bag</h2>
+          <p class="prod-desc">Lightweight and packable. Great for PE kit or a day trip.</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.pexels.com/photos/4068314/pexels-photo-4068314.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Canvas Tote Bag">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Bags ]</p>
+          <h2 class="prod-name">Canvas Tote Bag</h2>
+          <p class="prod-desc">Clean, minimal and reusable. Custom print available.</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="img/homesix.png" alt="Gusset Bag">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Bags ]</p>
+          <h2 class="prod-name">Gusset Drawstring Bag</h2>
+          <p class="prod-desc">Extra room with a structured gusset base. Built to handle daily use.</p>
+        </div>
+      </div>
+
+      <!-- Uniforms -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="img/homefour.png" alt="V-Neck Jumper">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Uniforms ]</p>
+          <h2 class="prod-name">V-Neck Jumper</h2>
+          <p class="prod-desc">Classic school cut in premium knit. Available in all school colours.</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="img/homeseven.png" alt="School Uniform Set">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Uniforms ]</p>
+          <h2 class="prod-name">Uniform Set</h2>
+          <p class="prod-desc">Full set — shirt, trousers or skirt, and jumper. Custom badge available.</p>
+        </div>
+      </div>
+
+      <!-- Sportswear -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="img/homefive.png" alt="Sports Kit">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Sportswear ]</p>
+          <h2 class="prod-name">Bespoke Sports Kit</h2>
+          <p class="prod-desc">Performance fabric with your school or club's design printed in full colour.</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.pexels.com/photos/3621741/pexels-photo-3621741.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="PE Polo Shirt"
+               onerror="this.src='img/homefive.png'">
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">[ Sportswear ]</p>
+          <h2 class="prod-name">PE Polo Shirt</h2>
+          <p class="prod-desc">Breathable moisture-wicking polo. School logo embroidered to order.</p>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="shop.html">Catalogue</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Returns and Refunds</a></li>
+          <li><a href="#">Help Centre</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact us</p>
+        <div class="footer-contact">
+          <p>Clayhall</p>
+          <p>+91 98182 24293</p>
+          <p>hello@hanabiradesigns.in</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-col-title">Socials</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Grid-view toggle
+    const gridBtns = document.querySelectorAll('.grid-btn');
+    const productGrid = document.getElementById('productGrid');
+
+    gridBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        gridBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cols = btn.dataset.cols;
+        productGrid.className = `product-grid cols-${cols}`;
+      });
+    });
+  </script>
+
+</body>
+</html>
