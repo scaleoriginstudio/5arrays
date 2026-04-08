@@ -68,21 +68,19 @@
         <div class="gallery-main">
           <img
             id="mainImage"
-            src="https://images.pexels.com/photos/8617742/pexels-photo-8617742.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="5Arrays School Jumper – front view"
-            onerror="this.src='img/homeseven.png'">
+            src="img/uniform1.png"
+            alt="5Arrays School Jumper – front view">
         </div>
 
         <div class="gallery-thumbs">
           <img class="thumb active"
-            src="https://images.pexels.com/photos/8617742/pexels-photo-8617742.jpeg?auto=compress&cs=tinysrgb&w=400"
-            alt="Front view"
-            onerror="this.src='img/homeseven.png'">
+            src="img/uniform1.png"
+            alt="Front view">
           <img class="thumb"
-            src="img/homefour.png"
+            src="img/uniform2.png"
             alt="Detail view">
           <img class="thumb"
-            src="img/homeseven.png"
+            src="img/uniform3.png"
             alt="Group view">
         </div>
 
@@ -217,7 +215,7 @@
         thumb.classList.add('active');
         mainImg.style.opacity = '0';
         setTimeout(() => {
-          mainImg.src = thumb.src.replace('w=400', 'w=800');
+          mainImg.src = thumb.src;
           mainImg.style.opacity = '1';
         }, 150);
       });
