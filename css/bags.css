@@ -7,9 +7,13 @@ html, body {
   height: 100%;
 }
 
-/* ── Page shell: everything below the nav ── */
+/* ── Page shell sits below the fixed nav ── */
 .bags-page {
-  height: calc(100vh - var(--nav-height));
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -17,45 +21,51 @@ html, body {
 
 
 /* ════════════════════════════════════════
-   BREADCRUMB
+   BREADCRUMB  (~26px)
    ════════════════════════════════════════ */
 .breadcrumb {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--blue);
-  padding: 12px 60px 0;
-  opacity: 0.65;
+  padding: 6px 60px;
+  opacity: 0.6;
+  line-height: 1;
 }
 .breadcrumb a { color: var(--blue); }
 .breadcrumb a:hover { text-decoration: underline; }
 
 
 /* ════════════════════════════════════════
-   HERO
+   HERO  (~90px)
    ════════════════════════════════════════ */
 .bags-hero {
   flex-shrink: 0;
   text-align: center;
-  padding: 20px 60px 16px;
+  padding: 10px 60px 10px;
 }
 
 .bags-hero h1 {
   font-family: 'Libre Baskerville', serif;
-  font-size: clamp(28px, 4.5vw, 58px);
+  font-size: 34px;
   color: var(--blue);
   line-height: 1.15;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .bags-hero h1 strong { font-weight: 700; }
 .bags-hero h1 em     { font-style: italic; font-weight: 400; }
 
+.bags-hero .btn {
+  padding: 8px 22px;
+  font-size: 10px;
+}
+
 
 /* ════════════════════════════════════════
-   PENCIL DRAWING CAROUSEL
+   PENCIL CAROUSEL  (~80px)
    ════════════════════════════════════════ */
 .pencil-carousel {
   flex-shrink: 0;
@@ -63,12 +73,12 @@ html, body {
   border-top: 1px solid rgba(27,20,100,.1);
   border-bottom: 1px solid rgba(27,20,100,.1);
   background: #faf9f5;
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .pencil-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
   width: max-content;
   animation: pencilScroll 25s linear infinite;
@@ -76,7 +86,7 @@ html, body {
 .pencil-track:hover { animation-play-state: paused; }
 
 .pencil-track img {
-  height: 130px;
+  height: 62px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -90,24 +100,24 @@ html, body {
 
 
 /* ════════════════════════════════════════
-   FILTER BAR
+   FILTER BAR  (~36px)
    ════════════════════════════════════════ */
 .bags-filter {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 10px 60px;
+  gap: 24px;
+  padding: 7px 60px;
   border-bottom: 1px solid rgba(27,20,100,.1);
 }
 
 .filter-search {
-  width: 160px;
+  width: 140px;
   border: none;
-  border-bottom: 1.5px solid rgba(27,20,100,.35);
-  padding: 5px 0;
+  border-bottom: 1.5px solid rgba(27,20,100,.3);
+  padding: 3px 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--blue);
   background: transparent;
   outline: none;
@@ -116,11 +126,10 @@ html, body {
 
 .filter-tabs {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
   margin-left: auto;
 }
-
 .filter-tab {
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
@@ -128,7 +137,7 @@ html, body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(27,20,100,.4);
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-bottom: 2px solid transparent;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
@@ -141,17 +150,28 @@ html, body {
 
 
 /* ════════════════════════════════════════
-   DOTS NAV (fixed right side)
+   PRODUCT VIEWER  (flex:1, takes the rest)
+   ════════════════════════════════════════ */
+.product-viewer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 0; /* critical for flex children */
+}
+
+
+/* ════════════════════════════════════════
+   DOTS NAV — anchored inside product viewer
    ════════════════════════════════════════ */
 .dots-nav {
-  position: fixed;
-  right: 24px;
+  position: absolute;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 13px;
-  z-index: 200;
+  gap: 12px;
+  z-index: 10;
 }
 
 .dot {
@@ -166,30 +186,23 @@ html, body {
 }
 .dot.active {
   background: var(--blue);
-  transform: scale(1.3);
+  transform: scale(1.35);
 }
 
 
 /* ════════════════════════════════════════
-   PRODUCT VIEWER
+   BAG SLIDES — absolutely fill the viewer
    ════════════════════════════════════════ */
-.product-viewer {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Each slide sits absolutely, full size */
 .bag-slide {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
-  padding: 20px 64px 20px 60px;
+  padding: 16px 56px 16px 60px;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(48px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(40px);
+  transition: opacity 0.48s ease, transform 0.48s ease;
 }
 
 .bag-slide.active {
@@ -200,16 +213,16 @@ html, body {
 
 .bag-slide.exit-up {
   opacity: 0;
-  transform: translateY(-48px);
+  transform: translateY(-40px);
   pointer-events: none;
-  transition: opacity 0.38s ease, transform 0.38s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .bag-slide.exit-down {
   opacity: 0;
-  transform: translateY(48px);
+  transform: translateY(40px);
   pointer-events: none;
-  transition: opacity 0.38s ease, transform 0.38s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 
@@ -219,27 +232,28 @@ html, body {
 .bag-layout {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  gap: 56px;
+  gap: 48px;
   align-items: center;
   width: 100%;
   height: 100%;
 }
 
+
 /* ── LEFT: gallery ── */
 .bag-gallery {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
   height: 100%;
   justify-content: center;
 }
 
 .bag-main-img {
   width: 100%;
-  aspect-ratio: 3 / 3.5;
   overflow: hidden;
   background: #f0ece0;
-  max-height: 55vh;
+  flex: 1;
+  min-height: 0;
 }
 
 .bag-main-img img {
@@ -254,7 +268,8 @@ html, body {
 .bag-thumbs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  gap: 5px;
+  flex-shrink: 0;
 }
 
 .bag-thumb {
@@ -278,44 +293,39 @@ html, body {
 
 /* ── RIGHT: details ── */
 .bag-details {
+  height: 100%;
   overflow-y: auto;
-  max-height: 100%;
-  padding-right: 8px;
-  padding-bottom: 8px;
+  padding: 8px 4px 8px 0;
 }
-
-/* Scrollbar subtlety */
-.bag-details::-webkit-scrollbar { width: 3px; }
-.bag-details::-webkit-scrollbar-track { background: transparent; }
-.bag-details::-webkit-scrollbar-thumb { background: rgba(27,20,100,.2); border-radius: 2px; }
+.bag-details::-webkit-scrollbar { width: 2px; }
+.bag-details::-webkit-scrollbar-thumb { background: rgba(27,20,100,.15); border-radius: 2px; }
 
 .bag-title {
   font-family: 'Libre Baskerville', serif;
-  font-size: clamp(18px, 2vw, 26px);
+  font-size: clamp(16px, 1.8vw, 22px);
   font-weight: 700;
   color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.2;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .bag-tagline {
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--blue);
-  margin-bottom: 18px;
-  opacity: 0.65;
+  margin-bottom: 14px;
+  opacity: 0.6;
 }
 
 /* ── Colours (display only) ── */
 .bag-colors {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 16px;
 }
-
 .clr-label {
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
@@ -325,25 +335,18 @@ html, body {
   color: var(--blue);
   flex-shrink: 0;
 }
-
-.clr-dots {
-  display: flex;
-  gap: 6px;
-}
-
+.clr-dots { display: flex; gap: 6px; }
 .clr-dot {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: block;
   flex-shrink: 0;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.14);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.12);
 }
 
 /* ── Info sections ── */
-.bag-section {
-  margin-bottom: 14px;
-}
+.bag-section { margin-bottom: 12px; }
 
 .bag-section-label {
   font-family: 'Montserrat', sans-serif;
@@ -352,80 +355,53 @@ html, body {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   display: block;
 }
 
-.bag-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.bag-section ul { list-style: none; padding: 0; margin: 0; }
 
 .bag-section li {
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--blue);
-  line-height: 1.85;
+  line-height: 1.8;
   padding-left: 12px;
   position: relative;
 }
-.bag-section li::before {
-  content: '·';
-  position: absolute;
-  left: 0;
-}
+.bag-section li::before { content: '·'; position: absolute; left: 0; }
 
 /* ── CTA ── */
-.bag-cta {
-  margin-top: 20px;
-}
+.bag-cta { margin-top: 16px; }
+.bag-cta .btn { padding: 9px 28px; font-size: 10px; }
 
 
 /* ════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .breadcrumb  { padding: 10px 40px 0; }
-  .bags-hero   { padding: 16px 40px 12px; }
-  .bags-filter { padding: 8px 40px; }
-  .bag-slide   { padding: 16px 48px 16px 40px; }
-  .bag-layout  { gap: 36px; }
-  .dots-nav    { right: 16px; }
+  .breadcrumb  { padding: 6px 40px; }
+  .bags-hero   { padding: 8px 40px; }
+  .bags-filter { padding: 6px 40px; }
+  .bag-slide   { padding: 12px 44px 12px 40px; }
+  .bag-layout  { gap: 32px; }
 }
 
 @media (max-width: 768px) {
   html, body { overflow: auto; height: auto; }
+  .bags-page  { position: static; height: auto; overflow: visible; }
+  .product-viewer { height: 70vh; overflow: hidden; }
 
-  .bags-page  { height: auto; overflow: visible; }
-  .product-viewer { height: auto; overflow: visible; }
+  .bag-slide  { padding: 16px 40px 16px 24px; }
+  .bag-layout { grid-template-columns: 1fr; gap: 20px; height: auto; }
+  .bag-main-img { flex: none; height: 240px; }
 
-  .bag-slide {
-    position: relative;
-    inset: auto;
-    opacity: 1;
-    transform: none;
-    pointer-events: all;
-    display: none;
-    padding: 32px 24px;
-  }
-  .bag-slide.active { display: flex; }
-
-  .bag-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    height: auto;
-  }
-
-  .bag-main-img { aspect-ratio: 4 / 3; max-height: none; }
-
-  .breadcrumb  { padding: 10px 24px 0; }
-  .bags-hero   { padding: 16px 24px 12px; }
-  .bags-filter { padding: 8px 24px; flex-wrap: wrap; gap: 12px; }
+  .bags-hero h1  { font-size: 26px; }
+  .breadcrumb    { padding: 6px 24px; }
+  .bags-hero     { padding: 8px 24px; }
+  .bags-filter   { padding: 6px 24px; flex-wrap: wrap; gap: 10px; }
   .filter-search { width: 100%; }
-  .filter-tabs { margin-left: 0; }
-
-  .pencil-track img { height: 90px; }
+  .filter-tabs   { margin-left: 0; }
+  .pencil-track img { height: 50px; }
   .dots-nav { right: 10px; gap: 10px; }
-  .dot { width: 7px; height: 7px; }
 }
