@@ -1,17 +1,34 @@
 /* ============================================================
-   BAGS.CSS — Bags category page
+   BAGS.CSS — Bags category page (no-scroll, wheel-navigated)
    ============================================================ */
 
-/* ── Breadcrumb ── */
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ── Page shell: everything below the nav ── */
+.bags-page {
+  height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+/* ════════════════════════════════════════
+   BREADCRUMB
+   ════════════════════════════════════════ */
 .breadcrumb {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--blue);
-  padding: 18px 60px 0;
-  opacity: 0.75;
+  padding: 12px 60px 0;
+  opacity: 0.65;
 }
 .breadcrumb a { color: var(--blue); }
 .breadcrumb a:hover { text-decoration: underline; }
@@ -21,18 +38,18 @@
    HERO
    ════════════════════════════════════════ */
 .bags-hero {
+  flex-shrink: 0;
   text-align: center;
-  padding: 60px 60px 48px;
+  padding: 20px 60px 16px;
 }
 
 .bags-hero h1 {
   font-family: 'Libre Baskerville', serif;
-  font-size: clamp(36px, 6vw, 72px);
+  font-size: clamp(28px, 4.5vw, 58px);
   color: var(--blue);
   line-height: 1.15;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
-
 .bags-hero h1 strong { font-weight: 700; }
 .bags-hero h1 em     { font-style: italic; font-weight: 400; }
 
@@ -41,35 +58,29 @@
    PENCIL DRAWING CAROUSEL
    ════════════════════════════════════════ */
 .pencil-carousel {
+  flex-shrink: 0;
   overflow: hidden;
-  border-top: 1px solid rgba(27,20,100,.12);
-  border-bottom: 1px solid rgba(27,20,100,.12);
+  border-top: 1px solid rgba(27,20,100,.1);
+  border-bottom: 1px solid rgba(27,20,100,.1);
   background: #faf9f5;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .pencil-track {
   display: flex;
-  gap: 32px;
+  gap: 24px;
+  align-items: center;
   width: max-content;
-  animation: pencilScroll 30s linear infinite;
+  animation: pencilScroll 25s linear infinite;
 }
-
 .pencil-track:hover { animation-play-state: paused; }
 
 .pencil-track img {
-  height: 180px;
+  height: 130px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(1) contrast(0.85);
-  opacity: 0.75;
-  transition: opacity 0.3s, filter 0.3s;
   flex-shrink: 0;
-}
-
-.pencil-track img:hover {
-  opacity: 1;
-  filter: grayscale(0.2) contrast(1);
+  display: block;
 }
 
 @keyframes pencilScroll {
@@ -82,47 +93,46 @@
    FILTER BAR
    ════════════════════════════════════════ */
 .bags-filter {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 20px 60px;
+  gap: 32px;
+  padding: 10px 60px;
   border-bottom: 1px solid rgba(27,20,100,.1);
 }
 
 .filter-search {
-  flex: 0 0 200px;
+  width: 160px;
   border: none;
-  border-bottom: 1px solid var(--blue);
-  padding: 6px 0;
+  border-bottom: 1.5px solid rgba(27,20,100,.35);
+  padding: 5px 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--blue);
   background: transparent;
   outline: none;
 }
-
-.filter-search::placeholder { color: rgba(27,20,100,.45); }
+.filter-search::placeholder { color: rgba(27,20,100,.4); }
 
 .filter-tabs {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   list-style: none;
   margin-left: auto;
 }
 
 .filter-tab {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(27,20,100,.45);
-  padding: 4px 12px;
+  color: rgba(27,20,100,.4);
+  padding: 4px 10px;
   border-bottom: 2px solid transparent;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
 }
-
 .filter-tab.active,
 .filter-tab:hover {
   color: var(--blue);
@@ -131,88 +141,105 @@
 
 
 /* ════════════════════════════════════════
-   DOTS NAVIGATION (fixed right)
+   DOTS NAV (fixed right side)
    ════════════════════════════════════════ */
 .dots-nav {
   position: fixed;
-  right: 28px;
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 13px;
   z-index: 200;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   border: 1.5px solid var(--blue);
   background: transparent;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.35s, transform 0.35s;
   display: block;
-  flex-shrink: 0;
 }
-
 .dot.active {
   background: var(--blue);
-  transform: scale(1.25);
+  transform: scale(1.3);
 }
 
 
 /* ════════════════════════════════════════
-   BAG SLIDES
+   PRODUCT VIEWER
    ════════════════════════════════════════ */
-.bags-viewer {
-  padding-right: 60px; /* leave room for fixed dots */
+.product-viewer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Each slide sits absolutely, full size */
 .bag-slide {
-  min-height: 100vh;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
-  padding: 60px 60px 60px 60px;
-  border-bottom: 1px solid rgba(27,20,100,.08);
-}
-
-/* Slide animation on entry */
-.bag-slide .bag-layout {
+  padding: 20px 64px 20px 60px;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-  width: 100%;
+  pointer-events: none;
+  transform: translateY(48px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.bag-slide.in-view .bag-layout {
+.bag-slide.active {
   opacity: 1;
+  pointer-events: all;
   transform: translateY(0);
 }
 
+.bag-slide.exit-up {
+  opacity: 0;
+  transform: translateY(-48px);
+  pointer-events: none;
+  transition: opacity 0.38s ease, transform 0.38s ease;
+}
+
+.bag-slide.exit-down {
+  opacity: 0;
+  transform: translateY(48px);
+  pointer-events: none;
+  transition: opacity 0.38s ease, transform 0.38s ease;
+}
+
 
 /* ════════════════════════════════════════
-   BAG LAYOUT — two columns
+   PRODUCT LAYOUT — two columns
    ════════════════════════════════════════ */
 .bag-layout {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  gap: 64px;
-  align-items: start;
+  gap: 56px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* ── LEFT: gallery ── */
 .bag-gallery {
-  position: sticky;
-  top: calc(var(--nav-height) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  justify-content: center;
 }
 
 .bag-main-img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 3.5;
   overflow: hidden;
   background: #f0ece0;
-  margin-bottom: 10px;
+  max-height: 55vh;
 }
 
 .bag-main-img img {
@@ -227,7 +254,7 @@
 .bag-thumbs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 7px;
+  gap: 6px;
 }
 
 .bag-thumb {
@@ -241,59 +268,57 @@
   transition: opacity 0.2s, outline 0.15s;
   display: block;
 }
-
 .bag-thumb:hover { opacity: 0.8; }
-
 .bag-thumb.active {
   opacity: 1;
   outline: 2px solid var(--blue);
   outline-offset: -2px;
 }
 
+
 /* ── RIGHT: details ── */
 .bag-details {
-  padding-top: 4px;
+  overflow-y: auto;
+  max-height: 100%;
+  padding-right: 8px;
+  padding-bottom: 8px;
 }
+
+/* Scrollbar subtlety */
+.bag-details::-webkit-scrollbar { width: 3px; }
+.bag-details::-webkit-scrollbar-track { background: transparent; }
+.bag-details::-webkit-scrollbar-thumb { background: rgba(27,20,100,.2); border-radius: 2px; }
 
 .bag-title {
   font-family: 'Libre Baskerville', serif;
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(18px, 2vw, 26px);
   font-weight: 700;
   color: var(--blue);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1.2;
-  margin-bottom: 4px;
-}
-
-.bag-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  color: var(--blue);
-  opacity: 0.6;
-  margin-bottom: 16px;
-  font-weight: 400;
+  margin-bottom: 6px;
 }
 
 .bag-tagline {
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--blue);
-  margin-bottom: 24px;
-  opacity: 0.75;
+  margin-bottom: 18px;
+  opacity: 0.65;
 }
 
 /* ── Colours (display only) ── */
 .bag-colors {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .clr-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -303,31 +328,31 @@
 
 .clr-dots {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .clr-dot {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   display: block;
   flex-shrink: 0;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.14);
 }
 
 /* ── Info sections ── */
 .bag-section {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .bag-section-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: block;
 }
 
@@ -339,13 +364,12 @@
 
 .bag-section li {
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--blue);
-  line-height: 1.8;
-  padding-left: 14px;
+  line-height: 1.85;
+  padding-left: 12px;
   position: relative;
 }
-
 .bag-section li::before {
   content: '·';
   position: absolute;
@@ -354,7 +378,7 @@
 
 /* ── CTA ── */
 .bag-cta {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 
@@ -362,25 +386,46 @@
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .bags-hero { padding: 48px 40px 36px; }
-  .bags-filter { padding: 16px 40px; }
-  .bag-slide { padding: 48px 48px 48px 40px; }
-  .bags-viewer { padding-right: 48px; }
-  .bag-layout { gap: 40px; }
-  .breadcrumb { padding: 14px 40px 0; }
+  .breadcrumb  { padding: 10px 40px 0; }
+  .bags-hero   { padding: 16px 40px 12px; }
+  .bags-filter { padding: 8px 40px; }
+  .bag-slide   { padding: 16px 48px 16px 40px; }
+  .bag-layout  { gap: 36px; }
+  .dots-nav    { right: 16px; }
 }
 
 @media (max-width: 768px) {
-  .bags-hero { padding: 36px 24px 28px; }
-  .bags-filter { padding: 14px 24px; flex-wrap: wrap; }
-  .filter-search { flex: 0 0 100%; }
-  .bag-slide { padding: 40px 24px 40px 24px; min-height: auto; }
-  .bags-viewer { padding-right: 0; }
-  .bag-layout { grid-template-columns: 1fr; gap: 28px; }
-  .bag-gallery { position: static; }
-  .bag-main-img { aspect-ratio: 4 / 3; }
-  .dots-nav { right: 12px; gap: 10px; }
-  .dot { width: 8px; height: 8px; }
-  .breadcrumb { padding: 12px 24px 0; }
-  .pencil-track img { height: 120px; }
+  html, body { overflow: auto; height: auto; }
+
+  .bags-page  { height: auto; overflow: visible; }
+  .product-viewer { height: auto; overflow: visible; }
+
+  .bag-slide {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+    display: none;
+    padding: 32px 24px;
+  }
+  .bag-slide.active { display: flex; }
+
+  .bag-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    height: auto;
+  }
+
+  .bag-main-img { aspect-ratio: 4 / 3; max-height: none; }
+
+  .breadcrumb  { padding: 10px 24px 0; }
+  .bags-hero   { padding: 16px 24px 12px; }
+  .bags-filter { padding: 8px 24px; flex-wrap: wrap; gap: 12px; }
+  .filter-search { width: 100%; }
+  .filter-tabs { margin-left: 0; }
+
+  .pencil-track img { height: 90px; }
+  .dots-nav { right: 10px; gap: 10px; }
+  .dot { width: 7px; height: 7px; }
 }
