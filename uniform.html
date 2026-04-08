@@ -97,34 +97,34 @@
         <div class="prod-colours">
           <p class="colour-label">Available in colours</p>
           <div class="colour-swatches">
-            <button class="swatch active" style="--swatch-color:#1a1a1a" data-name="Black" aria-label="Select Black">
+            <div class="swatch" style="--swatch-color:#1a1a1a">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Black</span>
-            </button>
-            <button class="swatch" style="--swatch-color:#1B1464" data-name="Navy" aria-label="Select Navy">
+            </div>
+            <div class="swatch" style="--swatch-color:#1B1464">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Navy</span>
-            </button>
-            <button class="swatch" style="--swatch-color:#9b9b9b" data-name="Marl Gray" aria-label="Select Marl Gray">
+            </div>
+            <div class="swatch" style="--swatch-color:#9b9b9b">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Marl<br>Gray</span>
-            </button>
-            <button class="swatch" style="--swatch-color:#2d6a4f" data-name="Bottle Green" aria-label="Select Bottle Green">
+            </div>
+            <div class="swatch" style="--swatch-color:#2d6a4f">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Bottle<br>Green</span>
-            </button>
-            <button class="swatch" style="--swatch-color:#4169E1" data-name="Royal Blue" aria-label="Select Royal Blue">
+            </div>
+            <div class="swatch" style="--swatch-color:#4169E1">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Royal<br>Blue</span>
-            </button>
-            <button class="swatch" style="--swatch-color:#7B2D8B" data-name="Purple" aria-label="Select Purple">
+            </div>
+            <div class="swatch" style="--swatch-color:#7B2D8B">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Purple</span>
-            </button>
-            <button class="swatch" style="--swatch-color:#7B2232" data-name="Maroon" aria-label="Select Maroon">
+            </div>
+            <div class="swatch" style="--swatch-color:#7B2232">
               <span class="swatch-dot"></span>
               <span class="swatch-name">Maroon</span>
-            </button>
+            </div>
           </div>
         </div>
 
@@ -221,14 +221,6 @@
       });
     });
 
-    // Colour swatch selector
-    const swatches = document.querySelectorAll('.swatch');
-    swatches.forEach(sw => {
-      sw.addEventListener('click', () => {
-        swatches.forEach(s => s.classList.remove('active'));
-        sw.classList.add('active');
-      });
-    });
   </script>
 
 </body>
