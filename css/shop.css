@@ -140,6 +140,8 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .prod-img {
