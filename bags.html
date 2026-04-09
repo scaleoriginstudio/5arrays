@@ -7,7 +7,7 @@
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/bags.css">
 </head>
@@ -20,7 +20,8 @@
     </div>
     <div class="nav-center">
       <button class="nav-hamburger" id="menuOpen" aria-label="Open navigation menu">
-        <span></span><span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
     <div class="nav-right"></div>
@@ -41,454 +42,480 @@
       <button class="menu-close-btn" id="menuClose" aria-label="Close menu">Close</button>
     </div>
     <div class="menu-footer">
-      <div class="menu-footer-logo"><img src="img/logo.png" alt="5 Arrays"></div>
+      <div class="menu-footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
       <span class="menu-footer-copy">© 2025 5 Arrays. Affordable Luxury.</span>
       <a href="#" class="menu-footer-social">Instagram</a>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       MAIN PAGE SHELL
-       ══════════════════════════════════════ -->
-  <div class="bags-page">
+  <!-- ── PAGE CONTENT ── -->
+  <main class="bags-main">
 
-    <!-- breadcrumb -->
+    <!-- Breadcrumb -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="shop.html">Shop by Category</a>
       <span>/</span>
       <span>Bags</span>
     </nav>
 
-    <!-- hero -->
-    <section class="bags-hero">
-      <h1>Carry <strong>more.</strong><br>Stress <em>less.</em></h1>
-      <a href="contact.html" class="btn btn-green">Get Started &rarr;</a>
-    </section>
+    <h1 class="bags-heading">Carry more.<br>Stress less.</h1>
+    <p class="bags-subheading">Durable, embroiderable bags built for every school day.</p>
 
-    <!-- pencil drawing carousel -->
-    <div class="pencil-carousel" aria-hidden="true">
-      <div class="pencil-track">
-        <!-- set 1 -->
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM.jpeg"       alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(1).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(2).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(3).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(4).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(5).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(6).jpeg" alt="bag sketch">
-        <!-- set 2 — duplicate for seamless loop -->
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM.jpeg"       alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(1).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(2).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(3).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(4).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(5).jpeg" alt="bag sketch">
-        <img src="img/WhatsApp%20Image%202026-02-27%20at%209.08.43%20PM%20(6).jpeg" alt="bag sketch">
+    <a href="contact.html" class="btn btn-green bags-cta">Buy Now</a>
+
+  </main>
+
+  <!-- ── PENCIL DRAWING CAROUSEL ── -->
+  <div class="pencil-carousel" aria-hidden="true">
+    <div class="pencil-track">
+      <img src="img/drawing1.jpeg" alt="Bag sketch">
+      <img src="img/drawing2.jpeg" alt="Bag sketch">
+      <img src="img/drawing3.jpeg" alt="Bag sketch">
+      <img src="img/drawing4.jpeg" alt="Bag sketch">
+      <img src="img/drawing5.jpeg" alt="Bag sketch">
+      <img src="img/drawing6.jpeg" alt="Bag sketch">
+      <img src="img/drawing7.jpeg" alt="Bag sketch">
+      <!-- duplicate for seamless loop -->
+      <img src="img/drawing1.jpeg" alt="Bag sketch">
+      <img src="img/drawing2.jpeg" alt="Bag sketch">
+      <img src="img/drawing3.jpeg" alt="Bag sketch">
+      <img src="img/drawing4.jpeg" alt="Bag sketch">
+      <img src="img/drawing5.jpeg" alt="Bag sketch">
+      <img src="img/drawing6.jpeg" alt="Bag sketch">
+      <img src="img/drawing7.jpeg" alt="Bag sketch">
+    </div>
+  </div>
+
+  <!-- ── CHIPS ── -->
+  <div class="bags-chips">
+    <button class="chip active" data-category="drawstring">Drawstring Bags</button>
+    <button class="chip" data-category="bookbag">Book Bag</button>
+    <button class="chip" data-category="backpack">Backpack</button>
+    <button class="chip" data-category="canvas">Canvas Bag</button>
+    <button class="chip" data-category="tote">Tote Bag</button>
+  </div>
+
+  <!-- ── PRODUCT CARDS ── -->
+  <section class="bags-products" id="bagsProducts"></section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
       </div>
+
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="shop.html">Catalogue</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Returns and Refunds</a></li>
+          <li><a href="#">Help Centre</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact us</p>
+        <div class="footer-contact">
+          <p>Clayhall</p>
+          <p>+91 98182 24293</p>
+          <p>hello@hanabiradesigns.in</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-col-title">Socials</p>
+        </div>
+      </div>
+
     </div>
+  </footer>
 
-    <!-- filter bar -->
-    <div class="bags-filter">
-      <input type="search" class="filter-search" placeholder="Search" aria-label="Search bags">
-      <ul class="filter-tabs" role="tablist">
-        <li class="filter-tab active" role="tab">All</li>
-        <li class="filter-tab" role="tab">Backpacks</li>
-        <li class="filter-tab" role="tab">Drawstring</li>
-        <li class="filter-tab" role="tab">Book Bags</li>
-      </ul>
-    </div>
-
-    <!-- ══════════════════════
-         PRODUCT VIEWER
-         ══════════════════════ -->
-    <div class="product-viewer" id="productViewer">
-
-      <!-- dots anchored inside the product viewer -->
-      <nav class="dots-nav" aria-label="Product navigation">
-        <span class="dot active" data-index="0" title="Superior Backpack"></span>
-        <span class="dot"        data-index="1" title="Drawstring Bag (with Gusset)"></span>
-        <span class="dot"        data-index="2" title="Drawstring Bag"></span>
-        <span class="dot"        data-index="3" title="Book Bag (non-expandable)"></span>
-        <span class="dot"        data-index="4" title="Book Bag (expandable)"></span>
-      </nav>
-
-      <!-- ── 1. SUPERIOR BACKPACK ── -->
-      <section class="bag-slide active" id="bag-0" data-index="0">
-        <div class="bag-gallery">
-            <div class="bag-main-img">
-              <img id="main-0" src="img/backpackshop.png" alt="Superior Backpack">
-            </div>
-            <div class="bag-thumbs">
-              <img class="bag-thumb active" src="img/backpackshop.png"          alt="Front"  data-main="main-0">
-              <img class="bag-thumb"        src="img/drawstringwithgusset1..png" alt="Detail" data-main="main-0">
-            </div>
-          </div>
-          <div class="bag-details">
-            <h2 class="bag-title">Superior Backpack</h2>
-            <p class="bag-tagline">The school bag built for busy school days.</p>
-            <div class="bag-colors">
-              <span class="clr-label">Colors</span>
-              <div class="clr-dots">
-                <span class="clr-dot" style="background:#1a1a1a" title="Black"></span>
-                <span class="clr-dot" style="background:#1B1464" title="Navy"></span>
-              </div>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Features</span>
-              <ul>
-                <li>Durable PVC coated polyester</li>
-                <li>Three compartments with built-in organiser padded zip pocket</li>
-                <li>Front zip pocket</li>
-                <li>Mesh bottle pocket</li>
-                <li>Padded shoulder straps</li>
-                <li>Rubber feet</li>
-                <li>Enhanced visibility reflectors</li>
-                <li>35 litres</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Best For</span>
-              <ul>
-                <li>Senior school and sixth form students</li>
-                <li>Long school days with multiple subjects</li>
-                <li>Those who need everything in its place</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Care</span>
-              <ul>
-                <li>Wipe clean with a damp cloth</li>
-                <li>Do not machine wash</li>
-                <li>Air dry only</li>
-              </ul>
-            </div>
-            <div class="bag-cta">
-              <a href="contact.html" class="btn btn-green">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── 2. DRAWSTRING BAG WITH GUSSET ── -->
-      <section class="bag-slide" id="bag-1" data-index="1">
-        <div class="bag-gallery">
-            <div class="bag-main-img">
-              <img id="main-1" src="img/drawstringwithgusset1..png" alt="Drawstring Bag with Gusset">
-            </div>
-            <div class="bag-thumbs">
-              <img class="bag-thumb active" src="img/drawstringwithgusset1..png"  alt="Front"  data-main="main-1">
-              <img class="bag-thumb"        src="img/drawstringwithgusset1.1.png" alt="Side"   data-main="main-1">
-              <img class="bag-thumb"        src="img/drawstringwithgusset1.3.png" alt="Detail" data-main="main-1">
-              <img class="bag-thumb"        src="img/drawstringwithgusset1.4.png" alt="Back"   data-main="main-1">
-            </div>
-          </div>
-          <div class="bag-details">
-            <h2 class="bag-title">Drawstring Bag <span style="font-size:0.6em;font-weight:400;text-transform:none;letter-spacing:0;">(with Gusset)</span></h2>
-            <p class="bag-tagline">The school bag built for busy school days.</p>
-            <div class="bag-colors">
-              <span class="clr-label">Colors</span>
-              <div class="clr-dots">
-                <span class="clr-dot" style="background:#1a1a1a" title="Black"></span>
-                <span class="clr-dot" style="background:#1B1464" title="Navy"></span>
-                <span class="clr-dot" style="background:#5b82c0" title="Light Blue"></span>
-                <span class="clr-dot" style="background:#c0392b" title="Red"></span>
-                <span class="clr-dot" style="background:#7B1818" title="Dark Red"></span>
-              </div>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Features</span>
-              <ul>
-                <li>100% polyester</li>
-                <li>Front zip compartment</li>
-                <li>Internal zip pouch</li>
-                <li>Name card holder</li>
-                <li>Enhanced visibility reflectors</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Best For</span>
-              <ul>
-                <li>Primary and secondary school students</li>
-                <li>Daily commute</li>
-                <li>After-school activities</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Care</span>
-              <ul>
-                <li>Wipe clean with a damp cloth</li>
-                <li>Do not machine wash</li>
-                <li>Air dry only</li>
-              </ul>
-            </div>
-            <div class="bag-cta">
-              <a href="contact.html" class="btn btn-green">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── 3. DRAWSTRING BAG ── -->
-      <section class="bag-slide" id="bag-2" data-index="2">
-        <div class="bag-gallery">
-            <div class="bag-main-img">
-              <img id="main-2" src="img/drawstringshop.png" alt="Drawstring Bag">
-            </div>
-            <div class="bag-thumbs">
-              <img class="bag-thumb active" src="img/drawstringshop.png"          alt="Front"  data-main="main-2">
-              <img class="bag-thumb"        src="img/drawstringwithgusset1.5.png" alt="Detail" data-main="main-2">
-            </div>
-          </div>
-          <div class="bag-details">
-            <h2 class="bag-title">Drawstring Bag</h2>
-            <p class="bag-tagline">The school bag built for busy school days.</p>
-            <div class="bag-colors">
-              <span class="clr-label">Colors</span>
-              <div class="clr-dots">
-                <span class="clr-dot" style="background:#1a1a1a" title="Black"></span>
-                <span class="clr-dot" style="background:#1B1464" title="Navy"></span>
-                <span class="clr-dot" style="background:#5b82c0" title="Light Blue"></span>
-                <span class="clr-dot" style="background:#c0392b" title="Red"></span>
-                <span class="clr-dot" style="background:#7B1818" title="Dark Red"></span>
-              </div>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Features</span>
-              <ul>
-                <li>100% polyester</li>
-                <li>Front zip compartment</li>
-                <li>Reinforced corners with metal eyelets</li>
-                <li>Enhanced visibility reflectors</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Best For</span>
-              <ul>
-                <li>Primary and secondary school students</li>
-                <li>PE kit</li>
-                <li>After-school training sessions</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Care</span>
-              <ul>
-                <li>Wipe clean with a damp cloth</li>
-                <li>Do not machine wash</li>
-                <li>Air dry only</li>
-              </ul>
-            </div>
-            <div class="bag-cta">
-              <a href="contact.html" class="btn btn-green">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── 4. BOOK BAG NON-EXPANDABLE ── -->
-      <section class="bag-slide" id="bag-3" data-index="3">
-        <div class="bag-gallery">
-            <div class="bag-main-img">
-              <img id="main-3" src="img/canvasshop.png" alt="Book Bag non-expandable">
-            </div>
-            <div class="bag-thumbs">
-              <img class="bag-thumb active" src="img/canvasshop.png"   alt="Front"  data-main="main-3">
-              <img class="bag-thumb"        src="img/backpackshop.png" alt="Detail" data-main="main-3">
-            </div>
-          </div>
-          <div class="bag-details">
-            <h2 class="bag-title">Book Bag <span style="font-size:0.6em;font-weight:400;text-transform:none;letter-spacing:0;">(non-expandable)</span></h2>
-            <p class="bag-tagline">The school bag built for busy school days.</p>
-            <div class="bag-colors">
-              <span class="clr-label">Colors</span>
-              <div class="clr-dots">
-                <span class="clr-dot" style="background:#1a1a1a" title="Black"></span>
-                <span class="clr-dot" style="background:#1B1464" title="Navy"></span>
-                <span class="clr-dot" style="background:#5b82c0" title="Light Blue"></span>
-                <span class="clr-dot" style="background:#c0392b" title="Red"></span>
-                <span class="clr-dot" style="background:#7B1818" title="Dark Red"></span>
-                <span class="clr-dot" style="background:#2d6a4f" title="Green"></span>
-                <span class="clr-dot" style="background:#7B2D8B" title="Purple"></span>
-              </div>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Features</span>
-              <ul>
-                <li>100% polyester PVC coated</li>
-                <li>Padded handle</li>
-                <li>Enhanced visibility reflectors</li>
-                <li>Name card holder</li>
-                <li>37cm × 30cm</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Best For</span>
-              <ul>
-                <li>Primary school students</li>
-                <li>Homework and reading books</li>
-                <li>Daily classroom use</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Care</span>
-              <ul>
-                <li>Wipe clean with a damp cloth</li>
-                <li>Do not machine wash</li>
-                <li>Air dry only</li>
-              </ul>
-            </div>
-            <div class="bag-cta">
-              <a href="contact.html" class="btn btn-green">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── 5. BOOK BAG EXPANDABLE ── -->
-      <section class="bag-slide" id="bag-4" data-index="4">
-        <div class="bag-gallery">
-            <div class="bag-main-img">
-              <img id="main-4" src="img/homesix.png" alt="Book Bag expandable">
-            </div>
-            <div class="bag-thumbs">
-              <img class="bag-thumb active" src="img/homesix.png"    alt="Front"  data-main="main-4">
-              <img class="bag-thumb"        src="img/canvasshop.png" alt="Detail" data-main="main-4">
-            </div>
-          </div>
-          <div class="bag-details">
-            <h2 class="bag-title">Book Bag <span style="font-size:0.6em;font-weight:400;text-transform:none;letter-spacing:0;">(expandable)</span></h2>
-            <p class="bag-tagline">The school bag built for busy school days.</p>
-            <div class="bag-colors">
-              <span class="clr-label">Colors</span>
-              <div class="clr-dots">
-                <span class="clr-dot" style="background:#1a1a1a" title="Black"></span>
-                <span class="clr-dot" style="background:#1B1464" title="Navy"></span>
-                <span class="clr-dot" style="background:#5b82c0" title="Light Blue"></span>
-                <span class="clr-dot" style="background:#c0392b" title="Red"></span>
-                <span class="clr-dot" style="background:#7B1818" title="Dark Red"></span>
-                <span class="clr-dot" style="background:#2d6a4f" title="Green"></span>
-                <span class="clr-dot" style="background:#7B2D8B" title="Purple"></span>
-              </div>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Features</span>
-              <ul>
-                <li>100% polyester</li>
-                <li>Padded handle</li>
-                <li>Detachable adjustable shoulder strap</li>
-                <li>Attached pencil case inside</li>
-                <li>Enhanced visibility reflectors</li>
-                <li>Name card holder</li>
-                <li>37cm × 30cm × 6cm</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Best For</span>
-              <ul>
-                <li>Primary school students</li>
-                <li>Homework, stationery and daily essentials</li>
-                <li>Carry by hand or over the shoulder</li>
-              </ul>
-            </div>
-            <div class="bag-section">
-              <span class="bag-section-label">Care</span>
-              <ul>
-                <li>Wipe clean with a damp cloth</li>
-                <li>Do not machine wash</li>
-                <li>Air dry only</li>
-              </ul>
-            </div>
-            <div class="bag-cta">
-              <a href="contact.html" class="btn btn-green">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div><!-- /product-viewer -->
-  </div><!-- /bags-page -->
-
-
-
+  <!-- ── PRODUCT OVERLAY ── -->
+  <div class="prod-overlay" id="prodOverlay" aria-hidden="true">
+    <div class="prod-overlay-panel" id="prodOverlayPanel"></div>
+  </div>
 
   <script src="js/main.js"></script>
   <script>
-    /* ══════════════════════════════════════
-       PRODUCT NAVIGATOR
-       ══════════════════════════════════════ */
-    const slides    = Array.from(document.querySelectorAll('.bag-slide'));
-    const dots      = Array.from(document.querySelectorAll('.dot'));
-    let   current   = 0;
-    let   animating = false;
+    const COLOURS = [
+      { name: 'Black',      hex: '#1a1a1a' },
+      { name: 'Navy',       hex: '#1B1464' },
+      { name: 'Royal Blue', hex: '#4169E1' },
+      { name: 'Red',        hex: '#c0392b' },
+      { name: 'Maroon',     hex: '#7B2232' },
+    ];
 
-    function goTo(next) {
-      if (next === current || next < 0 || next >= slides.length || animating) return;
-      animating = true;
+    const products = {
+      drawstring: [
+        {
+          name: 'Drawstring Bags (with Gusset)',
+          image: 'img/drawstringwithgusset1.1.png',
+          images: [
+            'img/drawstringwithgusset1.1.png',
+            'img/drawstringwithgusset1..png',
+            'img/drawstringwithgusset1.3.png',
+            'img/drawstringwithgusset1.4.png',
+            'img/drawstringwithgusset1.5.png',
+          ],
+          colours: COLOURS,
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Front zip compartment',
+              'Internal zip pouch',
+              'Name card holder',
+              'Enhanced visibility reflectors',
+            ],
+            bestFor: [
+              'Primary and secondary school students',
+              'Daily commute',
+              'After-school activities',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+        {
+          name: 'Drawstring Bag',
+          image: 'img/plaindrawstring1.png',
+          images: [
+            'img/plaindrawstring1.png',
+            'img/plaindrawstring2.png',
+            'img/plaindrawstring3.png',
+            'img/plaindrawstring4.png',
+            'img/plaindrawstring5.png',
+          ],
+          colours: COLOURS,
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Front zip compartment',
+              'Reinforced corners with metal eyelets',
+              'Enhanced visibility reflectors',
+            ],
+            bestFor: [
+              'Primary and secondary school students',
+              'PE kit',
+              'After-school training sessions',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+      ],
+      bookbag: [
+        {
+          name: 'Book Bag (Non-Expandable)',
+          image: 'img/bookbagne1.png',
+          images: [
+            'img/bookbagne1.png',
+            'img/bookbagne2.png',
+            'img/bookbagne3.png',
+          ],
+          colours: [
+            { name: 'Black',      hex: '#1a1a1a' },
+            { name: 'Navy',       hex: '#1B1464' },
+            { name: 'Royal Blue', hex: '#4169E1' },
+            { name: 'Red',        hex: '#c0392b' },
+            { name: 'Bottle',     hex: '#1A4731' },
+            { name: 'Purple',     hex: '#6B2D8B' },
+            { name: 'Maroon',     hex: '#7B2232' },
+          ],
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester PVC coated',
+              'Padded handle',
+              'Enhanced visibility reflectors',
+              'Name card holder',
+              '37cm x 30cm',
+            ],
+            bestFor: [
+              'Primary school students',
+              'Homework and reading books',
+              'Daily classroom use',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+        {
+          name: 'Book Bag (Expandable)',
+          image: 'img/bookbage1.png',
+          images: [
+            'img/bookbage1.png',
+            'img/bookbage2.png',
+            'img/bookbage3.png',
+          ],
+          colours: [
+            { name: 'Black',      hex: '#1a1a1a' },
+            { name: 'Navy',       hex: '#1B1464' },
+            { name: 'Royal Blue', hex: '#4169E1' },
+            { name: 'Red',        hex: '#c0392b' },
+            { name: 'Bottle',     hex: '#1A4731' },
+            { name: 'Purple',     hex: '#6B2D8B' },
+            { name: 'Maroon',     hex: '#7B2232' },
+          ],
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Padded handle',
+              'Detachable adjustable shoulder strap',
+              'Attached pencil case inside',
+              'Enhanced visibility reflectors',
+              'Name card holder',
+              '37cm x 30cm x 6cm',
+            ],
+            bestFor: [
+              'Primary school students',
+              'Homework, stationery and daily essentials',
+              'Carry by hand or over the shoulder',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+        {
+          name: 'Book Bag (Expandable Round Edges)',
+          image: 'img/bookbagere1.png',
+          images: [
+            'img/bookbagere1.png',
+            'img/bookbagere2.png',
+            'img/bookbagere3.png',
+            'img/bookbagere4.png',
+            'img/bookbagere5.png',
+          ],
+          colours: [
+            { name: 'Black',      hex: '#1a1a1a' },
+            { name: 'Navy',       hex: '#1B1464' },
+            { name: 'Royal Blue', hex: '#4169E1' },
+            { name: 'Red',        hex: '#c0392b' },
+            { name: 'Bottle',     hex: '#1A4731' },
+            { name: 'Purple',     hex: '#6B2D8B' },
+            { name: 'Maroon',     hex: '#7B2232' },
+          ],
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Enhanced visibility reflectors',
+              'Padded handle',
+              'Attached pencil case inside',
+              'Detachable adjustable shoulder strap',
+              'Name card holder',
+              '37cm x 30cm x 6cm',
+            ],
+            bestFor: [
+              'Primary school students',
+              'Homework, stationery and daily essentials',
+              'Carry by hand or over the shoulder',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+      ],
+      backpack: [],
+      canvas: [],
+      tote: [],
+    };
 
-      const dir = next > current ? 'exit-up' : 'exit-down';
+    const YOU_MAY_LIKE = [
+      { name: 'V-Neck Jumper',       image: 'img/uniform1.png',    link: 'uniform.html' },
+      { name: 'Bespoke Sports Kit',  image: 'img/sportskit.jpeg',  link: 'sportswear.html' },
+      { name: 'Backpack',            image: 'img/backpackshop.png', link: '#' },
+    ];
 
-      /* exit current */
-      slides[current].classList.remove('active');
-      slides[current].classList.add(dir);
-      setTimeout(() => slides[current].classList.remove(dir), 420);
+    // ── Overlay ──
+    function openOverlay(product) {
+      if (!product.overlay) return;
+      const o = product.overlay;
+      const panel = document.getElementById('prodOverlayPanel');
 
-      /* enter next */
-      current = next;
-      slides[current].classList.add('active');
+      panel.innerHTML = `
+        <button class="overlay-close" id="overlayClose" aria-label="Close">✕</button>
+        <div class="overlay-body">
+          <div class="overlay-left">
+            <div class="overlay-main-img">
+              <img id="overlayMainImg" src="${(product.images || [product.image])[0]}" alt="${product.name}">
+            </div>
+            ${product.images && product.images.length > 1 ? `
+            <div class="overlay-thumbs">
+              ${product.images.map((src, i) => `
+                <img class="overlay-thumb${i === 0 ? ' active' : ''}" src="${src}" alt="${product.name} view ${i + 1}" data-src="${src}">
+              `).join('')}
+            </div>` : ''}
+          </div>
+          <div class="overlay-right">
+            <p class="overlay-category">[ Bags ]</p>
+            <h2 class="overlay-name">${product.name}</h2>
+            <p class="overlay-tagline">${o.tagline}</p>
 
-      /* update dots */
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            <div class="overlay-section">
+              <p class="overlay-section-label">Colours</p>
+              <div class="overlay-swatches">
+                ${product.colours.map(c => `
+                  <div class="overlay-swatch-item">
+                    <span class="overlay-swatch" style="background:${c.hex}"></span>
+                    <span class="overlay-swatch-name">${c.name}</span>
+                  </div>`).join('')}
+              </div>
+            </div>
 
-      setTimeout(() => { animating = false; }, 520);
+            <div class="overlay-section">
+              <p class="overlay-section-label">Features</p>
+              <ul class="overlay-list">
+                ${o.features.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div class="overlay-section">
+              <p class="overlay-section-label">Best For</p>
+              <ul class="overlay-list">
+                ${o.bestFor.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div class="overlay-section">
+              <p class="overlay-section-label">Care</p>
+              <ul class="overlay-list">
+                ${o.care.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>
+
+            <a href="contact.html" class="btn btn-green overlay-cta">Buy Now</a>
+
+            <div class="overlay-also">
+              <p class="overlay-section-label">You Might Also Like</p>
+              <div class="overlay-also-grid">
+                ${YOU_MAY_LIKE.map(p => `
+                  <a href="${p.link}" class="overlay-also-card">
+                    <img src="${p.image}" alt="${p.name}">
+                    <span>${p.name}</span>
+                  </a>`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const overlay = document.getElementById('prodOverlay');
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      document.getElementById('overlayClose').addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeOverlay(); });
+
+      // Thumbnail switcher
+      panel.querySelectorAll('.overlay-thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          panel.querySelectorAll('.overlay-thumb').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          const main = document.getElementById('overlayMainImg');
+          main.style.opacity = '0';
+          setTimeout(() => { main.src = thumb.dataset.src; main.style.opacity = '1'; }, 150);
+        });
+      });
     }
 
-    /* ── Wheel / trackpad ── */
-    let wheelTimer = null;
-    window.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      clearTimeout(wheelTimer);
-      wheelTimer = setTimeout(() => {
-        goTo(e.deltaY > 0 ? current + 1 : current - 1);
-      }, 40);
-    }, { passive: false });
+    function closeOverlay() {
+      const overlay = document.getElementById('prodOverlay');
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
 
-    /* ── Keyboard arrows ── */
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') goTo(current + 1);
-      if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  goTo(current - 1);
-    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
 
-    /* ── Dot clicks ── */
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    // ── Cards ──
+    function renderCards(category) {
+      const grid = document.getElementById('bagsProducts');
+      const items = products[category] || [];
 
-    /* ── Touch swipe ── */
-    let touchY = null;
-    window.addEventListener('touchstart', (e) => { touchY = e.touches[0].clientY; }, { passive: true });
-    window.addEventListener('touchend',   (e) => {
-      if (touchY === null) return;
-      const diff = touchY - e.changedTouches[0].clientY;
-      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-      touchY = null;
-    }, { passive: true });
+      if (!items.length) {
+        grid.innerHTML = '<p class="bags-empty">Coming soon.</p>';
+        return;
+      }
 
-    /* ── Thumbnail switcher ── */
-    document.querySelectorAll('.bag-thumb').forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const mainImg  = document.getElementById(thumb.dataset.main);
-        const siblings = thumb.closest('.bag-thumbs').querySelectorAll('.bag-thumb');
-        siblings.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-        mainImg.style.opacity = '0';
-        setTimeout(() => { mainImg.src = thumb.src; mainImg.style.opacity = '1'; }, 150);
+      grid.innerHTML = items.map((p, i) => `
+        <div class="bag-card" data-category="${category}" data-index="${i}">
+          <div class="bag-card-img">
+            <img src="${p.image}" alt="${p.name}">
+          </div>
+          <div class="bag-card-info">
+            <h3 class="bag-card-name">${p.name}</h3>
+            <div class="bag-card-colours">
+              <span class="bag-card-colours-label">Colours</span>
+              <div class="bag-card-swatches">
+                ${p.colours.map(c => `<span class="bag-swatch" title="${c.name}" style="background:${c.hex}"></span>`).join('')}
+              </div>
+            </div>
+            <div class="bag-card-ctas">
+              <a href="contact.html" class="btn btn-green">Buy Now</a>
+              <button class="btn btn-outline view-product-btn" data-category="${category}" data-index="${i}">View Product</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.view-product-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const product = products[btn.dataset.category][btn.dataset.index];
+          openOverlay(product);
+        });
+      });
+    }
+
+    // Chip toggle + render
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        renderCards(chip.dataset.category);
       });
     });
 
-    /* ── Filter tabs ── */
-    document.querySelectorAll('.filter-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-      });
-    });
+    renderCards('drawstring');
+
+    // Smooth infinite carousel — no CSS reset flash
+    const track = document.querySelector('.pencil-track');
+    let x = 0;
+
+    function stepCarousel() {
+      const halfWidth = track.scrollWidth / 2;
+      x -= 1;
+      if (x <= -halfWidth) x += halfWidth;
+      track.style.transform = `translateX(${x}px)`;
+    }
+
+    // setInterval keeps running even when tab is in background
+    window.addEventListener('load', () => setInterval(stepCarousel, 16));
   </script>
 
 </body>
