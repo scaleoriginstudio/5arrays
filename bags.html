@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/bags.css">
+  <link rel="stylesheet" href="css/enquiry-overlay.css">
 </head>
 <body>
 
@@ -63,7 +64,7 @@
     <h1 class="bags-heading">Carry more.<br>Stress less.</h1>
     <p class="bags-subheading">Durable, embroiderable bags built for every school day.</p>
 
-    <a href="contact.html" class="btn btn-green bags-cta">Buy Now</a>
+    <button class="btn btn-green bags-cta" data-enquiry data-product="">Buy Now</button>
 
   </main>
 
@@ -143,6 +144,7 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/enquiry-overlay.js"></script>
   <script>
     const COLOURS = [
       { name: 'Black',      hex: '#1a1a1a' },
@@ -597,7 +599,7 @@
               </ul>
             </div>` : ''}
 
-            <a href="contact.html" class="btn btn-green overlay-cta">Buy Now</a>
+            <button class="btn btn-green overlay-cta" data-enquiry data-product="${product.name}">Buy Now</button>
 
             <div class="overlay-also">
               <p class="overlay-section-label">You Might Also Like</p>
@@ -666,7 +668,7 @@
               </div>
             </div>
             <div class="bag-card-ctas">
-              <a href="contact.html" class="btn btn-green">Buy Now</a>
+              <button class="btn btn-green" data-enquiry data-product="${p.name}">Buy Now</button>
               <button class="btn btn-outline view-product-btn" data-category="${category}" data-index="${i}">View Product</button>
             </div>
           </div>
@@ -690,7 +692,16 @@
       });
     });
 
-    renderCards('drawstring');
+    // Activate chip from URL hash (e.g. bags.html#canvas)
+    const hashCategory = window.location.hash.slice(1);
+    if (hashCategory && products[hashCategory] !== undefined) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      const targetChip = document.querySelector(`.chip[data-category="${hashCategory}"]`);
+      if (targetChip) targetChip.classList.add('active');
+      renderCards(hashCategory);
+    } else {
+      renderCards('drawstring');
+    }
 
     // Smooth infinite carousel — no CSS reset flash
     const track = document.querySelector('.pencil-track');

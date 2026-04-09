@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/enquiry-overlay.css">
 </head>
 <body>
 
@@ -158,7 +159,7 @@
 
         <!-- CTA -->
         <div class="prod-cta">
-          <a href="contact.html" class="btn btn-green">Order Now</a>
+          <button class="btn btn-green" data-enquiry data-product="School Uniform">Order Now</button>
         </div>
 
       </div>
@@ -204,6 +205,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/enquiry-overlay.js"></script>
   <script>
     // Thumbnail switcher
     const mainImg = document.getElementById('mainImage');

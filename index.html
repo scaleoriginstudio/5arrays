@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/enquiry-overlay.css">
 </head>
 <body>
 
@@ -175,11 +176,42 @@
 
       <div class="school-form-area">
         <h2>Bring 5 Arrays to your school</h2>
-        <form class="school-form" onsubmit="return false;">
-          <input class="field" type="text"  placeholder="Name">
-          <input class="field" type="text"  placeholder="School">
-          <input class="field" type="email" placeholder="Email Address">
-          <button type="submit" class="btn btn-green">Get Started &rarr;</button>
+        <form class="school-form" id="homeEnqForm" novalidate>
+          <div class="school-form-row">
+            <input class="field" type="text"  name="name"     placeholder="Full Name"       required>
+            <input class="field" type="tel"   name="phone"    placeholder="Phone Number"    required>
+          </div>
+          <div class="school-form-row">
+            <input class="field" type="email" name="email"    placeholder="Email Address"   required>
+            <input class="field" type="text"  name="location" placeholder="School / City"   required>
+          </div>
+          <div class="school-form-select-wrap">
+            <select class="field" name="product" required>
+              <option value="" disabled selected>Product of Interest</option>
+              <optgroup label="Bags">
+                <option value="School Backpack">School Backpack</option>
+                <option value="Drawstring Backpack">Drawstring Backpack</option>
+                <option value="Canvas Tote Bag">Canvas Tote Bag</option>
+                <option value="Canvas Backpack Rolltop Carry">Canvas Backpack Rolltop Carry</option>
+                <option value="Canvas Briefcase Daily Carry">Canvas Briefcase Daily Carry</option>
+                <option value="Canvas Satchel Classic Carry">Canvas Satchel Classic Carry</option>
+              </optgroup>
+              <optgroup label="Uniforms">
+                <option value="School Uniform">School Uniform</option>
+                <option value="V-Neck Uniform">V-Neck Uniform</option>
+                <option value="Custom / Bespoke Uniform">Custom / Bespoke Uniform</option>
+              </optgroup>
+              <optgroup label="Sportswear">
+                <option value="Bespoke Sportswear">Bespoke Sportswear</option>
+                <option value="Training Kit">Training Kit</option>
+                <option value="Custom Sports Kit">Custom Sports Kit</option>
+              </optgroup>
+              <option value="Other / General Enquiry">Other / General Enquiry</option>
+            </select>
+            <span class="school-form-arrow" aria-hidden="true"></span>
+          </div>
+          <button type="submit" class="btn btn-green" id="homeEnqBtn">Get Started &rarr;</button>
+          <p class="school-form-status" id="homeEnqStatus" aria-live="polite"></p>
         </form>
       </div>
 
@@ -224,6 +256,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/enquiry-overlay.js"></script>
 
 </body>
 </html>

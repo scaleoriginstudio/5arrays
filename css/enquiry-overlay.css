@@ -1,0 +1,202 @@
+/* ============================================================
+   ENQUIRY-OVERLAY.CSS — shared across all pages
+   Glass-effect backdrop · Slide-up panel · Form
+   ============================================================ */
+
+.enq-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.enq-overlay.is-open {
+  pointer-events: all;
+  visibility: visible;
+}
+
+/* Glass backdrop */
+.enq-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 20, 100, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.enq-overlay.is-open .enq-backdrop { opacity: 1; }
+
+/* Panel */
+.enq-panel {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  padding: 36px 40px 40px;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.enq-overlay.is-open .enq-panel {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Header row */
+.enq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.enq-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.2;
+}
+
+.enq-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  padding: 4px 0;
+  transition: color 0.2s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.enq-close:hover { color: var(--green); }
+
+/* Form */
+.enq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.enq-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.enq-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.enq-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.enq-group input,
+.enq-group select,
+.enq-group textarea {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #333;
+  background: #f7f7f5;
+  border: 1px solid #ddd;
+  padding: 9px 13px;
+  outline: none;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.enq-group input::placeholder,
+.enq-group textarea::placeholder { color: #bbb; }
+
+.enq-group input:focus,
+.enq-group select:focus,
+.enq-group textarea:focus {
+  border-color: var(--green);
+  background: #fff;
+}
+
+.enq-group input.error,
+.enq-group select.error,
+.enq-group textarea.error { border-color: #c0392b; }
+
+.enq-select-wrap { position: relative; }
+
+.enq-select-wrap select { padding-right: 36px; cursor: pointer; }
+
+.enq-select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--blue);
+  pointer-events: none;
+}
+
+.enq-group textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.enq-optional {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.enq-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.enq-note {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: #999 !important;
+}
+
+.enq-status {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  min-height: 16px;
+}
+
+.enq-status.success { color: var(--green); }
+.enq-status.error   { color: #c0392b; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enq-panel { padding: 28px 20px 32px; max-height: 95vh; }
+  .enq-row   { grid-template-columns: 1fr; }
+  .enq-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
