@@ -220,6 +220,15 @@
   margin-bottom: 20px;
 }
 
+.overlay-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--dark);
+  opacity: 0.75;
+  margin-bottom: 20px;
+}
+
 .overlay-section { margin-bottom: 18px; }
 
 .overlay-section-label {

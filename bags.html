@@ -341,7 +341,43 @@
         },
       ],
       backpack: [],
-      canvas: [],
+      canvas: [
+        {
+          name: 'Canvas Bag Heritage Utility',
+          image: 'img/canvashu1.png',
+          images: [
+            'img/canvashu1.png',
+            'img/canvashu2.png',
+            'img/canvashu3.png',
+          ],
+          colours: [
+            { name: 'Natural Canvas', hex: '#D4C5A0' },
+            { name: 'Sand Tan',       hex: '#C4A882' },
+            { name: 'Ash Grey',       hex: '#9E9E9E' },
+          ],
+          overlay: {
+            tagline: 'Crafted for durability and understated design — rugged materials, refined detailing.',
+            description: 'Each piece features high-quality canvas construction complemented by genuine leather accents, offering a balance of strength, structure, and everyday usability. Designed for modern routines, the bags provide spacious interiors, secure closures, and versatile carrying options — suitable for work, travel, and daily use.',
+            features: [
+              'Premium canvas with genuine leather detailing',
+              'Structured build for durability and shape retention',
+              'Spacious interior with practical organisation',
+              'Adjustable straps for flexible carrying styles',
+              'Designed for everyday use across work and travel',
+            ],
+            bestFor: [
+              'Work and professional use',
+              'Travel and commuting',
+              'Daily errands and lifestyle',
+            ],
+            specs: [
+              'Material: Canvas with leather accents',
+              'Style: Messenger / Shoulder / Utility',
+              'Trim: Burnished Brown Leather',
+            ],
+          },
+        },
+      ],
       tote: [],
     };
 
@@ -387,6 +423,8 @@
               </div>
             </div>
 
+            ${o.description ? `<p class="overlay-description">${o.description}</p>` : ''}
+
             <div class="overlay-section">
               <p class="overlay-section-label">Features</p>
               <ul class="overlay-list">
@@ -394,19 +432,29 @@
               </ul>
             </div>
 
+            ${o.bestFor ? `
             <div class="overlay-section">
               <p class="overlay-section-label">Best For</p>
               <ul class="overlay-list">
                 ${o.bestFor.map(f => `<li>${f}</li>`).join('')}
               </ul>
-            </div>
+            </div>` : ''}
 
+            ${o.specs ? `
+            <div class="overlay-section">
+              <p class="overlay-section-label">Specifications</p>
+              <ul class="overlay-list">
+                ${o.specs.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>` : ''}
+
+            ${o.care ? `
             <div class="overlay-section">
               <p class="overlay-section-label">Care</p>
               <ul class="overlay-list">
                 ${o.care.map(f => `<li>${f}</li>`).join('')}
               </ul>
-            </div>
+            </div>` : ''}
 
             <a href="contact.html" class="btn btn-green overlay-cta">Buy Now</a>
 
