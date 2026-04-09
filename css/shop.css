@@ -1,0 +1,239 @@
+/* ════════════════════════════════════════
+   SHOP / CATALOGUE — shop.css
+   ════════════════════════════════════════ */
+
+/* ── CATEGORY BANNER ── */
+.cat-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 340px;
+  margin-top: var(--nav-height);
+  overflow: hidden;
+}
+
+.cat-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cat-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.cat-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay so label is always readable */
+.cat-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cat-label {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  z-index: 2;
+  color: #fff;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+/* ── SHOP SECTION ── */
+.shop-section {
+  padding: 72px 80px 100px;
+  background: #fff;
+}
+
+.shop-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  gap: 24px;
+}
+
+.shop-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(40px, 5.5vw, 88px);
+  color: var(--blue);
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* ── GRID TOGGLE ── */
+.grid-toggle {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.grid-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--blue);
+  border: none;
+  cursor: pointer;
+  opacity: 0.2;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px;
+}
+
+.grid-btn:hover { opacity: 0.55; }
+.grid-btn.active { opacity: 1; }
+
+/* Inner lines that visually represent column count */
+.grid-btn span {
+  display: block;
+  height: 100%;
+  background: #fff;
+  border-radius: 1px;
+  flex: 1;
+}
+
+/* ── PRODUCT GRID ── */
+.product-grid {
+  display: grid;
+  gap: 36px 28px;
+  transition: grid-template-columns 0.2s;
+}
+
+.product-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.product-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.product-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.product-grid.cols-1 { grid-template-columns: 1fr; }
+
+/* list view: image left, text right */
+.product-grid.cols-1 .prod-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.product-grid.cols-1 .prod-img {
+  aspect-ratio: auto;
+  height: 220px;
+}
+
+/* ── PRODUCT CARD ── */
+.prod-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.prod-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f5f1e8;
+}
+
+.prod-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.prod-card:hover .prod-img img {
+  transform: scale(1.04);
+}
+
+.prod-info {
+  padding: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prod-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  color: var(--blue);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.prod-cat {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 12px;
+  color: var(--green);
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+.prod-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--blue);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .shop-section { padding: 60px 48px 80px; }
+  .product-grid.cols-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Category banner — 2 columns, taller on mobile */
+  .cat-banner {
+    grid-template-columns: repeat(2, 1fr);
+    height: 480px;
+  }
+
+  /* Shop section */
+  .shop-section { padding: 48px 24px 64px; }
+
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  /* Product grids — collapse to 2 cols on mobile regardless of toggle */
+  .product-grid.cols-4,
+  .product-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .product-grid.cols-2  { grid-template-columns: repeat(2, 1fr); }
+  .product-grid.cols-1  { grid-template-columns: 1fr; }
+
+  /* List view on mobile reverts to single column stacked */
+  .product-grid.cols-1 .prod-card {
+    grid-template-columns: 1fr;
+  }
+  .product-grid.cols-1 .prod-img {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+}

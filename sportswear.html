@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Sportswear – 5 Arrays</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/sportswear.css">
+  <link rel="stylesheet" href="css/enquiry-overlay.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="img/logo.png" alt="5 Arrays – Affordable Luxury">
+    </div>
+    <div class="nav-center">
+      <button class="nav-hamburger" id="menuOpen" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-right"></div>
+  </nav>
+
+  <!-- ── MENU OVERLAY ── -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="menu-panel">
+      <div class="menu-img">
+        <img src="img/homefive.png" alt="5 Arrays sportswear">
+      </div>
+      <nav class="menu-nav" aria-label="Main menu">
+        <a href="index.html"   class="menu-link">Home</a>
+        <a href="about.html"   class="menu-link">About Us</a>
+        <a href="contact.html" class="menu-link">Contact Us</a>
+        <a href="shop.html"    class="menu-link active-link">Shop</a>
+      </nav>
+      <button class="menu-close-btn" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+    <div class="menu-footer">
+      <div class="menu-footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+      <span class="menu-footer-copy">© 2025 5 Arrays. Affordable Luxury.</span>
+      <a href="#" class="menu-footer-social">Instagram</a>
+    </div>
+  </div>
+
+  <!-- ── PAGE ── -->
+  <main class="sport-page">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="shop.html">Shop by Category</a>
+      <span>/</span>
+      <span>Bespoke Sportswear</span>
+    </nav>
+
+    <!-- ── INTRO: 3 kit images + heading ── -->
+    <section class="sport-intro">
+      <div class="sport-intro-imgs">
+        <img src="img/sportskit.jpeg" alt="5 Arrays Sports Kit">
+      </div>
+      <div class="sport-intro-text">
+        <h1>Fully Custom<br>Team Kits &amp;<br>Sportswear</h1>
+      </div>
+    </section>
+
+    <!-- ── HERO BANNER: action photo + blurred overlay panel ── -->
+    <section class="sport-hero">
+
+      <div class="sport-hero-img">
+        <img src="img/sportssecondscroll.png" alt="5 Arrays Sports Kit">
+      </div>
+
+      <div class="sport-hero-panel">
+        <!-- blurred background via ::before in CSS -->
+        <div class="sport-hero-content">
+          <p class="sport-hero-sub">Bespoke Sportswear</p>
+          <h2 class="sport-hero-title">Kit that<br>represents<br>you.</h2>
+          <button class="btn btn-green" data-enquiry data-product="Bespoke Sportswear">Get Started &rarr;</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── FEATURES: image left, 3 bullets right ── -->
+    <section class="sport-features">
+
+      <div class="sport-feat-img">
+        <img src="img/sportsthirdscroll.png"
+             alt="School sports team in kit">
+      </div>
+
+      <div class="sport-feat-list">
+
+        <div class="sport-feat">
+          <h3>Built for how kids actually play</h3>
+          <p>Hard-wearing kit that survives the pitch, the wash, and the next season.</p>
+        </div>
+
+        <div class="sport-feat">
+          <h3>Every team looks like a team</h3>
+          <p>Custom colours, badge, and name &mdash; not a generic catalogue pick.</p>
+        </div>
+
+        <div class="sport-feat">
+          <h3>Fits that move with young athletes</h3>
+          <p>Cut for junior bodies. Full range of motion, every game.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="shop.html">Catalogue</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Returns and Refunds</a></li>
+          <li><a href="#">Help Centre</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact us</p>
+        <div class="footer-contact">
+          <p>Clayhall</p>
+          <p>+91 98182 24293</p>
+          <p>hello@hanabiradesigns.in</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-col-title">Socials</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/enquiry-overlay.js"></script>
+
+</body>
+</html>

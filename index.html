@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/enquiry-overlay.css">
 </head>
 <body>
 
@@ -83,15 +84,15 @@
 
     <div class="h-grid-3">
       <div class="h-card">
-        <img src="https://images.pexels.com/photos/28503359/pexels-photo-28503359.jpeg?auto=compress&cs=tinysrgb&w=800" alt="School Backpack with Supplies">
+        <img src="img/backpackshop.png" alt="School Backpack with Supplies">
         <a href="shop.html" class="h-card-label">School Backpack</a>
       </div>
       <div class="h-card">
-        <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sporty Drawstring Backpack">
+        <img src="/img/drawstringshop.png" alt="Sporty Drawstring Backpack">
         <a href="shop.html" class="h-card-label">Drawstring Backpack</a>
       </div>
       <div class="h-card">
-        <img src="https://images.pexels.com/photos/4068314/pexels-photo-4068314.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Canvas Tote Bag">
+        <img src="/img/canvasshop.png" alt="Canvas Tote Bag">
         <a href="shop.html" class="h-card-label">Canvas Tote Bag</a>
       </div>
     </div>
@@ -99,16 +100,16 @@
     <div class="h-grid-2">
       <div class="h-card">
         <img src="img/homefour.png" alt="V-Neck Uniform">
-        <a href="shop.html" class="h-card-label">V-Neck Uniform</a>
+        <a href="uniform.html" class="h-card-label">V-Neck Uniform</a>
       </div>
       <div class="h-card">
         <img src="img/homefive.png" alt="Bespoke Sportswear">
-        <a href="shop.html" class="h-card-label">Bespoke Sportswear</a>
+        <a href="sportswear.html" class="h-card-label">Bespoke Sportswear</a>
       </div>
     </div>
 
     <div class="view-all">
-      <a href="#">View all</a>
+      <a href="shop.html">View all</a>
     </div>
   </section>
 
@@ -175,11 +176,42 @@
 
       <div class="school-form-area">
         <h2>Bring 5 Arrays to your school</h2>
-        <form class="school-form" onsubmit="return false;">
-          <input class="field" type="text"  placeholder="Name">
-          <input class="field" type="text"  placeholder="School">
-          <input class="field" type="email" placeholder="Email Address">
-          <button type="submit" class="btn btn-green">Get Started &rarr;</button>
+        <form class="school-form" id="homeEnqForm" novalidate>
+          <div class="school-form-row">
+            <input class="field" type="text"  name="name"     placeholder="Full Name"       required>
+            <input class="field" type="tel"   name="phone"    placeholder="Phone Number"    required>
+          </div>
+          <div class="school-form-row">
+            <input class="field" type="email" name="email"    placeholder="Email Address"   required>
+            <input class="field" type="text"  name="location" placeholder="School / City"   required>
+          </div>
+          <div class="school-form-select-wrap">
+            <select class="field" name="product" required>
+              <option value="" disabled selected>Product of Interest</option>
+              <optgroup label="Bags">
+                <option value="School Backpack">School Backpack</option>
+                <option value="Drawstring Backpack">Drawstring Backpack</option>
+                <option value="Canvas Tote Bag">Canvas Tote Bag</option>
+                <option value="Canvas Backpack Rolltop Carry">Canvas Backpack Rolltop Carry</option>
+                <option value="Canvas Briefcase Daily Carry">Canvas Briefcase Daily Carry</option>
+                <option value="Canvas Satchel Classic Carry">Canvas Satchel Classic Carry</option>
+              </optgroup>
+              <optgroup label="Uniforms">
+                <option value="School Uniform">School Uniform</option>
+                <option value="V-Neck Uniform">V-Neck Uniform</option>
+                <option value="Custom / Bespoke Uniform">Custom / Bespoke Uniform</option>
+              </optgroup>
+              <optgroup label="Sportswear">
+                <option value="Bespoke Sportswear">Bespoke Sportswear</option>
+                <option value="Training Kit">Training Kit</option>
+                <option value="Custom Sports Kit">Custom Sports Kit</option>
+              </optgroup>
+              <option value="Other / General Enquiry">Other / General Enquiry</option>
+            </select>
+            <span class="school-form-arrow" aria-hidden="true"></span>
+          </div>
+          <button type="submit" class="btn btn-green" id="homeEnqBtn">Get Started &rarr;</button>
+          <p class="school-form-status" id="homeEnqStatus" aria-live="polite"></p>
         </form>
       </div>
 
@@ -197,21 +229,21 @@
       <div>
         <p class="footer-col-title">Quick Links</p>
         <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Garments</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Garments</a></li>
           <li><a href="#">Catalogue</a></li>
           <li><a href="#">Terms of Service</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Shipping and Returns</a></li>
-          <li><a href="#">Help Centre</a></li>
+          <li><a href="contact.html">Help Centre</a></li>
         </ul>
       </div>
 
       <div>
-        <p class="footer-col-title">Contact us</p>
+        <a href="contact.html" class="footer-col-title" style="display:block;">Contact us</a>
         <div class="footer-contact">
-          <p>City/Tel</p>
+          <p>United Kingdom</p>
           <p>+00 00000 00000</p>
           <p>website@5arraysports.co.uk</p>
         </div>
@@ -224,6 +256,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/enquiry-overlay.js"></script>
 
 </body>
 </html>

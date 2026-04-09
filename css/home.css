@@ -322,6 +322,49 @@
 
 .school-form .btn { margin-top: 8px; }
 
+.school-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+}
+
+.school-form-select-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.school-form-select-wrap select.field {
+  margin-bottom: 0;
+  cursor: pointer;
+  padding-right: 28px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.school-form-arrow {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #aaa;
+  pointer-events: none;
+}
+
+.school-form-status {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 10px;
+  min-height: 16px;
+  color: var(--green);
+}
+
+.school-form-status.error { color: #c0392b; }
+
 
 /* ════════════════════════════════════════
    RESPONSIVE — TABLET (≤1024px)

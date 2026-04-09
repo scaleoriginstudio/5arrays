@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bags – 5 Arrays</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/bags.css">
+  <link rel="stylesheet" href="css/enquiry-overlay.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="img/logo.png" alt="5 Arrays – Affordable Luxury">
+    </div>
+    <div class="nav-center">
+      <button class="nav-hamburger" id="menuOpen" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-right"></div>
+  </nav>
+
+  <!-- ── MENU OVERLAY ── -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="menu-panel">
+      <div class="menu-img">
+        <img src="img/homeseven.png" alt="5 Arrays students in uniform">
+      </div>
+      <nav class="menu-nav" aria-label="Main menu">
+        <a href="index.html"   class="menu-link">Home</a>
+        <a href="about.html"   class="menu-link">About Us</a>
+        <a href="contact.html" class="menu-link">Contact Us</a>
+        <a href="shop.html"    class="menu-link active-link">Shop</a>
+      </nav>
+      <button class="menu-close-btn" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+    <div class="menu-footer">
+      <div class="menu-footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+      <span class="menu-footer-copy">© 2025 5 Arrays. Affordable Luxury.</span>
+      <a href="#" class="menu-footer-social">Instagram</a>
+    </div>
+  </div>
+
+  <!-- ── PAGE CONTENT ── -->
+  <main class="bags-main">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="shop.html">Shop by Category</a>
+      <span>/</span>
+      <span>Bags</span>
+    </nav>
+
+    <h1 class="bags-heading">Carry more.<br>Stress less.</h1>
+    <p class="bags-subheading">Durable, embroiderable bags built for every school day.</p>
+
+    <button class="btn btn-green bags-cta" data-enquiry data-product="">Buy Now</button>
+
+  </main>
+
+  <!-- ── PENCIL DRAWING CAROUSEL ── -->
+  <div class="pencil-carousel" aria-hidden="true">
+    <div class="pencil-track">
+      <img src="img/drawing1.jpeg" alt="Bag sketch">
+      <img src="img/drawing2.jpeg" alt="Bag sketch">
+      <img src="img/drawing3.jpeg" alt="Bag sketch">
+      <img src="img/drawing4.jpeg" alt="Bag sketch">
+      <img src="img/drawing5.jpeg" alt="Bag sketch">
+      <img src="img/drawing6.jpeg" alt="Bag sketch">
+      <img src="img/drawing7.jpeg" alt="Bag sketch">
+      <!-- duplicate for seamless loop -->
+      <img src="img/drawing1.jpeg" alt="Bag sketch">
+      <img src="img/drawing2.jpeg" alt="Bag sketch">
+      <img src="img/drawing3.jpeg" alt="Bag sketch">
+      <img src="img/drawing4.jpeg" alt="Bag sketch">
+      <img src="img/drawing5.jpeg" alt="Bag sketch">
+      <img src="img/drawing6.jpeg" alt="Bag sketch">
+      <img src="img/drawing7.jpeg" alt="Bag sketch">
+    </div>
+  </div>
+
+  <!-- ── CHIPS ── -->
+  <div class="bags-chips">
+    <button class="chip active" data-category="drawstring">Drawstring Bags</button>
+    <button class="chip" data-category="bookbag">Book Bag</button>
+    <button class="chip" data-category="backpack">Backpack</button>
+    <button class="chip" data-category="canvas">Canvas Bag</button>
+    <button class="chip" data-category="tote">Tote Bag</button>
+  </div>
+
+  <!-- ── PRODUCT CARDS ── -->
+  <section class="bags-products" id="bagsProducts"></section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="shop.html">Catalogue</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Returns and Refunds</a></li>
+          <li><a href="#">Help Centre</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact us</p>
+        <div class="footer-contact">
+          <p>Clayhall</p>
+          <p>+91 98182 24293</p>
+          <p>hello@hanabiradesigns.in</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-col-title">Socials</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ── PRODUCT OVERLAY ── -->
+  <div class="prod-overlay" id="prodOverlay" aria-hidden="true">
+    <div class="prod-overlay-panel" id="prodOverlayPanel"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/enquiry-overlay.js"></script>
+  <script>
+    const COLOURS = [
+      { name: 'Black',      hex: '#1a1a1a' },
+      { name: 'Navy',       hex: '#1B1464' },
+      { name: 'Royal Blue', hex: '#4169E1' },
+      { name: 'Red',        hex: '#c0392b' },
+      { name: 'Maroon',     hex: '#7B2232' },
+    ];
+
+    const products = {
+      drawstring: [
+        {
+          name: 'Drawstring Bags (with Gusset)',
+          image: 'img/drawstringwithgusset1.1.png',
+          images: [
+            'img/drawstringwithgusset1.1.png',
+            'img/drawstringwithgusset1..png',
+            'img/drawstringwithgusset1.3.png',
+            'img/drawstringwithgusset1.4.png',
+            'img/drawstringwithgusset1.5.png',
+          ],
+          colours: COLOURS,
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Front zip compartment',
+              'Internal zip pouch',
+              'Name card holder',
+              'Enhanced visibility reflectors',
+            ],
+            bestFor: [
+              'Primary and secondary school students',
+              'Daily commute',
+              'After-school activities',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+        {
+          name: 'Drawstring Bag',
+          image: 'img/plaindrawstring1.png',
+          images: [
+            'img/plaindrawstring1.png',
+            'img/plaindrawstring2.png',
+            'img/plaindrawstring3.png',
+            'img/plaindrawstring4.png',
+            'img/plaindrawstring5.png',
+          ],
+          colours: COLOURS,
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Front zip compartment',
+              'Reinforced corners with metal eyelets',
+              'Enhanced visibility reflectors',
+            ],
+            bestFor: [
+              'Primary and secondary school students',
+              'PE kit',
+              'After-school training sessions',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+      ],
+      bookbag: [
+        {
+          name: 'Book Bag (Non-Expandable)',
+          image: 'img/bookbagne1.png',
+          images: [
+            'img/bookbagne1.png',
+            'img/bookbagne2.png',
+            'img/bookbagne3.png',
+          ],
+          colours: [
+            { name: 'Black',      hex: '#1a1a1a' },
+            { name: 'Navy',       hex: '#1B1464' },
+            { name: 'Royal Blue', hex: '#4169E1' },
+            { name: 'Red',        hex: '#c0392b' },
+            { name: 'Bottle',     hex: '#1A4731' },
+            { name: 'Purple',     hex: '#6B2D8B' },
+            { name: 'Maroon',     hex: '#7B2232' },
+          ],
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester PVC coated',
+              'Padded handle',
+              'Enhanced visibility reflectors',
+              'Name card holder',
+              '37cm x 30cm',
+            ],
+            bestFor: [
+              'Primary school students',
+              'Homework and reading books',
+              'Daily classroom use',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+        {
+          name: 'Book Bag (Expandable)',
+          image: 'img/bookbage1.png',
+          images: [
+            'img/bookbage1.png',
+            'img/bookbage2.png',
+            'img/bookbage3.png',
+          ],
+          colours: [
+            { name: 'Black',      hex: '#1a1a1a' },
+            { name: 'Navy',       hex: '#1B1464' },
+            { name: 'Royal Blue', hex: '#4169E1' },
+            { name: 'Red',        hex: '#c0392b' },
+            { name: 'Bottle',     hex: '#1A4731' },
+            { name: 'Purple',     hex: '#6B2D8B' },
+            { name: 'Maroon',     hex: '#7B2232' },
+          ],
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Padded handle',
+              'Detachable adjustable shoulder strap',
+              'Attached pencil case inside',
+              'Enhanced visibility reflectors',
+              'Name card holder',
+              '37cm x 30cm x 6cm',
+            ],
+            bestFor: [
+              'Primary school students',
+              'Homework, stationery and daily essentials',
+              'Carry by hand or over the shoulder',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+        {
+          name: 'Book Bag (Expandable Round Edges)',
+          image: 'img/bookbagere1.png',
+          images: [
+            'img/bookbagere1.png',
+            'img/bookbagere2.png',
+            'img/bookbagere3.png',
+            'img/bookbagere4.png',
+            'img/bookbagere5.png',
+          ],
+          colours: [
+            { name: 'Black',      hex: '#1a1a1a' },
+            { name: 'Navy',       hex: '#1B1464' },
+            { name: 'Royal Blue', hex: '#4169E1' },
+            { name: 'Red',        hex: '#c0392b' },
+            { name: 'Bottle',     hex: '#1A4731' },
+            { name: 'Purple',     hex: '#6B2D8B' },
+            { name: 'Maroon',     hex: '#7B2232' },
+          ],
+          overlay: {
+            tagline: 'The school bag built for busy school days.',
+            features: [
+              '100% polyester',
+              'Enhanced visibility reflectors',
+              'Padded handle',
+              'Attached pencil case inside',
+              'Detachable adjustable shoulder strap',
+              'Name card holder',
+              '37cm x 30cm x 6cm',
+            ],
+            bestFor: [
+              'Primary school students',
+              'Homework, stationery and daily essentials',
+              'Carry by hand or over the shoulder',
+            ],
+            care: [
+              'Wipe clean with a damp cloth',
+              'Do not machine wash',
+              'Air dry only',
+            ],
+          },
+        },
+      ],
+      backpack: [],
+      canvas: [
+        {
+          name: 'Canvas Bag Heritage Utility',
+          image: 'img/canvashu1.png',
+          images: [
+            'img/canvashu1.png',
+            'img/canvashu2.png',
+            'img/canvashu3.png',
+          ],
+          colours: [
+            { name: 'Natural Canvas', hex: '#D4C5A0' },
+            { name: 'Sand Tan',       hex: '#C4A882' },
+            { name: 'Ash Grey',       hex: '#9E9E9E' },
+          ],
+          overlay: {
+            tagline: 'Crafted for durability and understated design — rugged materials, refined detailing.',
+            description: 'Each piece features high-quality canvas construction complemented by genuine leather accents, offering a balance of strength, structure, and everyday usability. Designed for modern routines, the bags provide spacious interiors, secure closures, and versatile carrying options — suitable for work, travel, and daily use.',
+            features: [
+              'Premium canvas with genuine leather detailing',
+              'Structured build for durability and shape retention',
+              'Spacious interior with practical organisation',
+              'Adjustable straps for flexible carrying styles',
+              'Designed for everyday use across work and travel',
+            ],
+            bestFor: [
+              'Work and professional use',
+              'Travel and commuting',
+              'Daily errands and lifestyle',
+            ],
+            specs: [
+              'Material: Canvas with leather accents',
+              'Style: Messenger / Shoulder / Utility',
+              'Trim: Burnished Brown Leather',
+            ],
+          },
+        },
+        {
+          name: 'Canvas Backpack – Field Pack',
+          image: 'img/canvasfp1.png',
+          images: [
+            'img/canvasfp1.png',
+            'img/canvasfp2.png',
+            'img/canvasfp3.png',
+          ],
+          colours: [
+            { name: 'Natural Canvas', hex: '#D4C5A0' },
+            { name: 'Sand Tan',       hex: '#C4A882' },
+            { name: 'Ash Grey',       hex: '#9E9E9E' },
+          ],
+          overlay: {
+            tagline: 'Structured utility for everyday resilience — durable canvas, refined leather.',
+            description: 'Designed for everyday resilience with a structured, utilitarian form, the Field Pack brings together durable canvas and refined leather detailing. Its clean, functional design handles daily movement while maintaining a grounded, timeless aesthetic.',
+            features: [
+              'Durable canvas construction with leather detailing',
+              'Multiple outer pockets for accessible storage',
+              'Spacious main compartment with internal organisation',
+              'Adjustable shoulder straps for comfortable carry',
+              'Reinforced build for long-term use',
+            ],
+            bestFor: [
+              'Work and daily commute',
+              'Travel and weekend carry',
+              'Day-to-day utility',
+            ],
+            specs: [
+              'Material: Canvas with leather accents',
+              'Colour: Natural Canvas / Sand Tan / Ash Grey with Burnished Brown Leather',
+              'Style: Backpack / Utility Carry',
+            ],
+          },
+        },
+        {
+          name: 'Canvas Backpack – Rolltop Carry',
+          image: 'img/canvasrc1.png',
+          images: [
+            'img/canvasrc1.png',
+            'img/canvasrc2.png',
+            'img/canvasrc3.png',
+          ],
+          colours: [
+            { name: 'Natural Canvas', hex: '#D4C5A0' },
+            { name: 'Sand Tan',       hex: '#C4A882' },
+            { name: 'Ash Grey',       hex: '#9E9E9E' },
+            { name: 'Deep Indigo',    hex: '#2E2B5F' },
+          ],
+          overlay: {
+            tagline: 'Flexible storage for everyday movement — adjustable capacity, clean silhouette.',
+            description: 'Designed for flexible storage and everyday movement, the Rolltop Carry combines durable canvas construction with refined leather detailing. The rolltop closure allows adjustable capacity, making it adaptable to varying storage needs while maintaining a clean, structured silhouette.',
+            features: [
+              'Durable canvas body with leather detailing',
+              'Rolltop closure for adjustable storage capacity',
+              'External front pocket for easy access',
+              'Spacious main compartment with internal organisation',
+              'Adjustable shoulder straps for comfortable carry',
+            ],
+            bestFor: [
+              'Daily commute and travel',
+              'Extended use and weekend carry',
+              'Variable load — light to full pack',
+            ],
+            specs: [
+              'Material: Canvas with leather accents',
+              'Colour: Natural Canvas / Sand Tan / Ash Grey / Deep Indigo with Burnished Brown Leather',
+              'Style: Backpack / Rolltop / Utility Carry',
+            ],
+          },
+        },
+        {
+          name: 'Canvas Satchel – Classic Carry (DO-351)',
+          image: 'img/canvascc1.png',
+          images: [
+            'img/canvascc1.png',
+            'img/canvascc2.png',
+          ],
+          colours: [
+            { name: 'Natural Canvas', hex: '#D4C5A0' },
+            { name: 'Sand Tan',       hex: '#C4A882' },
+            { name: 'Ash Grey',       hex: '#9E9E9E' },
+            { name: 'Deep Indigo',    hex: '#2E2B5F' },
+          ],
+          overlay: {
+            tagline: 'Timeless satchel design — durable canvas, full leather detailing.',
+            description: 'Rooted in timeless design, the Classic Carry satchel brings together durable canvas construction with full leather detailing for a refined yet functional everyday bag. Its structured flap silhouette and balanced proportions give it a clean, dependable presence suited for both work and daily use.',
+            features: [
+              'Durable canvas body with full leather flap and detailing',
+              'Structured satchel design for everyday and work use',
+              'Spacious main compartment with internal organisation',
+              'Secure flap closure with reinforced strap fastenings',
+              'Top handle and adjustable shoulder strap for versatile carry',
+            ],
+            bestFor: [
+              'Work and professional settings',
+              'Daily commute and travel',
+              'Everyday organised carry',
+            ],
+            specs: [
+              'Material: Canvas with leather accents',
+              'Colour: Natural Canvas / Sand Tan / Ash Grey / Deep Indigo with Burnished Brown Leather',
+              'Style: Satchel / Shoulder / Work Carry',
+            ],
+          },
+        },
+        {
+          name: 'Canvas Briefcase – Daily Carry (DO-350)',
+          image: 'img/canvasdc1.png',
+          images: [
+            'img/canvasdc1.png',
+            'img/canvasdc2.png',
+          ],
+          colours: [
+            { name: 'Natural Canvas', hex: '#D4C5A0' },
+            { name: 'Sand Tan',       hex: '#C4A882' },
+            { name: 'Ash Grey',       hex: '#9E9E9E' },
+            { name: 'Olive Green',    hex: '#6B6E3A' },
+          ],
+          overlay: {
+            tagline: 'Structured everyday carry — work-ready form, grounded utilitarian character.',
+            description: 'Designed for structured everyday use, the Daily Carry briefcase combines durable canvas with refined leather detailing. Its clean form and reinforced construction make it suitable for professional settings while maintaining a grounded, utilitarian character.',
+            features: [
+              'Durable canvas construction with leather detailing',
+              'Structured silhouette for professional everyday use',
+              'Spacious main compartment with internal organisation',
+              'Secure flap closure with reinforced straps',
+              'Top handle and adjustable shoulder strap for versatile carry',
+            ],
+            bestFor: [
+              'Professional and office use',
+              'Daily commute and travel',
+              'Work and laptop carry',
+            ],
+            specs: [
+              'Material: Canvas with leather accents',
+              'Colour: Natural Canvas / Sand Tan / Ash Grey / Olive Green with Burnished Brown Leather',
+              'Style: Briefcase / Shoulder / Work Carry',
+            ],
+          },
+        },
+      ],
+      tote: [],
+    };
+
+    const YOU_MAY_LIKE = [
+      { name: 'V-Neck Jumper',       image: 'img/uniform1.png',    link: 'uniform.html' },
+      { name: 'Bespoke Sports Kit',  image: 'img/sportskit.jpeg',  link: 'sportswear.html' },
+      { name: 'Backpack',            image: 'img/backpackshop.png', link: '#' },
+    ];
+
+    // ── Overlay ──
+    function openOverlay(product) {
+      if (!product.overlay) return;
+      const o = product.overlay;
+      const panel = document.getElementById('prodOverlayPanel');
+
+      panel.innerHTML = `
+        <button class="overlay-close" id="overlayClose" aria-label="Close">✕</button>
+        <div class="overlay-body">
+          <div class="overlay-left">
+            <div class="overlay-main-img">
+              <img id="overlayMainImg" src="${(product.images || [product.image])[0]}" alt="${product.name}">
+            </div>
+            ${product.images && product.images.length > 1 ? `
+            <div class="overlay-thumbs">
+              ${product.images.map((src, i) => `
+                <img class="overlay-thumb${i === 0 ? ' active' : ''}" src="${src}" alt="${product.name} view ${i + 1}" data-src="${src}">
+              `).join('')}
+            </div>` : ''}
+          </div>
+          <div class="overlay-right">
+            <p class="overlay-category">[ Bags ]</p>
+            <h2 class="overlay-name">${product.name}</h2>
+            <p class="overlay-tagline">${o.tagline}</p>
+
+            <div class="overlay-section">
+              <p class="overlay-section-label">Colours</p>
+              <div class="overlay-swatches">
+                ${product.colours.map(c => `
+                  <div class="overlay-swatch-item">
+                    <span class="overlay-swatch" style="background:${c.hex}"></span>
+                    <span class="overlay-swatch-name">${c.name}</span>
+                  </div>`).join('')}
+              </div>
+            </div>
+
+            ${o.description ? `<p class="overlay-description">${o.description}</p>` : ''}
+
+            <div class="overlay-section">
+              <p class="overlay-section-label">Features</p>
+              <ul class="overlay-list">
+                ${o.features.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>
+
+            ${o.bestFor ? `
+            <div class="overlay-section">
+              <p class="overlay-section-label">Best For</p>
+              <ul class="overlay-list">
+                ${o.bestFor.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>` : ''}
+
+            ${o.specs ? `
+            <div class="overlay-section">
+              <p class="overlay-section-label">Specifications</p>
+              <ul class="overlay-list">
+                ${o.specs.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>` : ''}
+
+            ${o.care ? `
+            <div class="overlay-section">
+              <p class="overlay-section-label">Care</p>
+              <ul class="overlay-list">
+                ${o.care.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>` : ''}
+
+            <button class="btn btn-green overlay-cta" data-enquiry data-product="${product.name}">Buy Now</button>
+
+            <div class="overlay-also">
+              <p class="overlay-section-label">You Might Also Like</p>
+              <div class="overlay-also-grid">
+                ${YOU_MAY_LIKE.map(p => `
+                  <a href="${p.link}" class="overlay-also-card">
+                    <img src="${p.image}" alt="${p.name}">
+                    <span>${p.name}</span>
+                  </a>`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const overlay = document.getElementById('prodOverlay');
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      document.getElementById('overlayClose').addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeOverlay(); });
+
+      // Thumbnail switcher
+      panel.querySelectorAll('.overlay-thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          panel.querySelectorAll('.overlay-thumb').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          const main = document.getElementById('overlayMainImg');
+          main.style.opacity = '0';
+          setTimeout(() => { main.src = thumb.dataset.src; main.style.opacity = '1'; }, 150);
+        });
+      });
+    }
+
+    function closeOverlay() {
+      const overlay = document.getElementById('prodOverlay');
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+
+    // ── Cards ──
+    function renderCards(category) {
+      const grid = document.getElementById('bagsProducts');
+      const items = products[category] || [];
+
+      if (!items.length) {
+        grid.innerHTML = '<p class="bags-empty">Coming soon.</p>';
+        return;
+      }
+
+      grid.innerHTML = items.map((p, i) => `
+        <div class="bag-card" data-category="${category}" data-index="${i}">
+          <div class="bag-card-img">
+            <img src="${p.image}" alt="${p.name}">
+          </div>
+          <div class="bag-card-info">
+            <h3 class="bag-card-name">${p.name}</h3>
+            <div class="bag-card-colours">
+              <span class="bag-card-colours-label">Colours</span>
+              <div class="bag-card-swatches">
+                ${p.colours.map(c => `<span class="bag-swatch" title="${c.name}" style="background:${c.hex}"></span>`).join('')}
+              </div>
+            </div>
+            <div class="bag-card-ctas">
+              <button class="btn btn-green" data-enquiry data-product="${p.name}">Buy Now</button>
+              <button class="btn btn-outline view-product-btn" data-category="${category}" data-index="${i}">View Product</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.view-product-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const product = products[btn.dataset.category][btn.dataset.index];
+          openOverlay(product);
+        });
+      });
+    }
+
+    // Chip toggle + render
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        renderCards(chip.dataset.category);
+      });
+    });
+
+    // Activate chip from URL hash (e.g. bags.html#canvas)
+    const hashCategory = window.location.hash.slice(1);
+    if (hashCategory && products[hashCategory] !== undefined) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      const targetChip = document.querySelector(`.chip[data-category="${hashCategory}"]`);
+      if (targetChip) targetChip.classList.add('active');
+      renderCards(hashCategory);
+    } else {
+      renderCards('drawstring');
+    }
+
+    // Smooth infinite carousel — no CSS reset flash
+    const track = document.querySelector('.pencil-track');
+    let x = 0;
+
+    function stepCarousel() {
+      const halfWidth = track.scrollWidth / 2;
+      x -= 1;
+      if (x <= -halfWidth) x += halfWidth;
+      track.style.transform = `translateX(${x}px)`;
+    }
+
+    // setInterval keeps running even when tab is in background
+    window.addEventListener('load', () => setInterval(stepCarousel, 16));
+  </script>
+
+</body>
+</html>

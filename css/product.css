@@ -1,0 +1,254 @@
+/* ════════════════════════════════════════
+   PRODUCT DETAIL PAGE — product.css
+   ════════════════════════════════════════ */
+
+.product-page {
+  margin-top: var(--nav-height);
+  padding: 40px 80px 100px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--blue);
+  margin-bottom: 40px;
+  opacity: 0.75;
+}
+
+.breadcrumb a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: var(--blue);
+}
+
+/* ── TWO-COLUMN LAYOUT ── */
+.product-layout {
+  display: grid;
+  grid-template-columns: 2fr 2.6fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── LEFT: IMAGE GALLERY ── */
+.product-gallery {
+  position: sticky;
+  top: calc(var(--nav-height) + 24px);
+}
+
+.gallery-main {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f0ece0;
+  margin-bottom: 10px;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top center;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s, outline 0.15s;
+  display: block;
+  background: #f0ece0;
+}
+
+.thumb:hover { opacity: 0.85; }
+
+.thumb.active {
+  opacity: 1;
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+
+/* ── RIGHT: PRODUCT DETAILS ── */
+.product-details {
+  padding-top: 4px;
+}
+
+.prod-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.3;
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 16px;
+  margin-bottom: 14px;
+}
+
+.prod-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: var(--blue);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+/* ── COLOUR SWATCHES ── */
+.colour-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--blue);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.colour-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 10px;
+  margin-bottom: 36px;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.swatch-dot {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--swatch-color);
+  display: block;
+  transition: outline 0.15s, transform 0.15s;
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.swatch:hover .swatch-dot {
+  transform: scale(1.08);
+}
+
+.swatch.active .swatch-dot {
+  outline: 2px solid var(--blue);
+}
+
+.swatch-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  color: var(--blue);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── PRODUCT SECTIONS ── */
+.prod-section {
+  margin-bottom: 22px;
+}
+
+.prod-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.prod-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--blue);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.prod-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prod-section li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--blue);
+  line-height: 1.75;
+  padding-left: 16px;
+  position: relative;
+  text-align: justify;
+}
+
+.prod-section li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+}
+
+/* ── CTA ── */
+.prod-cta {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.prod-cta .btn {
+  padding: 14px 48px;
+  font-size: 15px;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .product-page { padding: 32px 48px 80px; }
+  .product-layout { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .product-page { padding: 28px 24px 64px; }
+
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .product-gallery { position: static; }
+
+  .gallery-main { aspect-ratio: 4 / 3; }
+
+  .prod-title { font-size: 18px; }
+
+  .colour-swatches { gap: 12px 8px; }
+
+  .swatch-dot { width: 38px; height: 38px; }
+
+  .prod-cta .btn { width: 100%; text-align: center; }
+}
