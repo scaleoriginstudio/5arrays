@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – 5 Arrays</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="img/logo.png" alt="5 Arrays – Affordable Luxury">
+    </div>
+    <div class="nav-center">
+      <button class="nav-hamburger" id="menuOpen" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-right"></div>
+  </nav>
+
+  <!-- ── MENU OVERLAY ── -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="menu-panel">
+      <div class="menu-img">
+        <img src="img/homeseven.png" alt="5 Arrays students in uniform">
+      </div>
+      <nav class="menu-nav" aria-label="Main menu">
+        <a href="index.html"   class="menu-link">Home</a>
+        <a href="about.html"   class="menu-link">About Us</a>
+        <a href="contact.html" class="menu-link active-link">Contact Us</a>
+        <a href="shop.html"    class="menu-link">Shop</a>
+      </nav>
+      <button class="menu-close-btn" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+    <div class="menu-footer">
+      <div class="menu-footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+      <span class="menu-footer-copy">© 2025 5 Arrays. Affordable Luxury.</span>
+      <a href="#" class="menu-footer-social">Instagram</a>
+    </div>
+  </div>
+
+  <!-- ── PAGE HEADER ── -->
+  <section class="contact-header">
+    <p class="contact-eyebrow">Get In Touch</p>
+    <h1>Contact Us</h1>
+    <p class="contact-subhead">Tell us what you need. We'll get back to you promptly.</p>
+  </section>
+
+  <!-- ── MAIN CONTENT ── -->
+  <section class="contact-body">
+
+    <!-- LEFT: Form -->
+    <div class="contact-form-col">
+      <form class="contact-form" id="contactForm" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="+44 00000 00000" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-location">Location / School</label>
+            <input type="text" id="cf-location" name="location" placeholder="City or school name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-product">Product of Interest</label>
+          <div class="select-wrap">
+            <select id="cf-product" name="product" required>
+              <option value="" disabled selected>Select a product</option>
+              <optgroup label="Bags">
+                <option value="School Backpack">School Backpack</option>
+                <option value="Drawstring Backpack">Drawstring Backpack</option>
+                <option value="Canvas Tote Bag">Canvas Tote Bag</option>
+                <option value="Canvas Backpack Rolltop Carry">Canvas Backpack Rolltop Carry</option>
+                <option value="Canvas Briefcase Daily Carry">Canvas Briefcase Daily Carry</option>
+                <option value="Canvas Satchel Classic Carry">Canvas Satchel Classic Carry</option>
+              </optgroup>
+              <optgroup label="Uniforms">
+                <option value="School Uniform">School Uniform</option>
+                <option value="V-Neck Uniform">V-Neck Uniform</option>
+                <option value="Custom Uniform">Custom / Bespoke Uniform</option>
+              </optgroup>
+              <optgroup label="Sportswear">
+                <option value="Bespoke Sportswear">Bespoke Sportswear</option>
+                <option value="Training Kit">Training Kit</option>
+                <option value="Custom Sports Kit">Custom Sports Kit</option>
+              </optgroup>
+              <option value="Other / General Enquiry">Other / General Enquiry</option>
+            </select>
+            <span class="select-arrow" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">Message <span class="optional">(optional)</span></label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Any extra details, quantities, or deadlines…"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-green" id="submitBtn">Send Enquiry &rarr;</button>
+          <p class="form-note">We typically respond within 1–2 business days.</p>
+        </div>
+
+        <!-- Status messages -->
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+
+      </form>
+    </div>
+
+    <!-- RIGHT: Contact info + QR -->
+    <div class="contact-info-col">
+
+      <div class="contact-details">
+        <h2>Reach us directly</h2>
+
+        <div class="contact-item">
+          <span class="contact-item-label">Phone</span>
+          <a href="tel:+000000000000" class="contact-item-value">+00 00000 00000</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-item-label">Email</span>
+          <a href="mailto:website@5arraysports.co.uk" class="contact-item-value">website@5arraysports.co.uk</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-item-label">Location</span>
+          <span class="contact-item-value">United Kingdom</span>
+        </div>
+      </div>
+
+      <div class="contact-divider"></div>
+
+      <!-- Linktree QR -->
+      <div class="contact-qr">
+        <img src="img/linktree.svg" alt="5 Arrays Linktree QR code" class="qr-image">
+        <p class="qr-caption">Scan to know more</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="5 Arrays">
+      </div>
+
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Garments</a></li>
+          <li><a href="#">Catalogue</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Shipping and Returns</a></li>
+          <li><a href="#">Help Centre</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact us</p>
+        <div class="footer-contact">
+          <p>United Kingdom</p>
+          <p>+00 00000 00000</p>
+          <p>website@5arraysports.co.uk</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-col-title">Socials</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+</html>
